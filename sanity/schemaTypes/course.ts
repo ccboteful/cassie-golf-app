@@ -1,149 +1,91 @@
-export default {
+import { defineArrayMember, defineField, defineType } from "sanity";
+
+export default defineType({
   name: "course",
-  title: "Golf Course",
+  title: "Course",
   type: "document",
   fields: [
-    {
+    defineField({
       name: "name",
       title: "Course Name",
       type: "string",
-      validation: (Rule) => Rule.required(),
-    },
-    {
+      validation: (rule) => rule.required(),
+    }),
+    defineField({
       name: "slug",
       title: "Slug",
       type: "slug",
-      options: {
-        source: "name",
-        maxLength: 96,
-      },
-    },
-    {
+      options: { source: "name", maxLength: 96 },
+      validation: (rule) => rule.required(),
+    }),
+    defineField({
       name: "region",
       title: "Region",
+      type: "reference",
+      to: [{ type: "region" }],
+      validation: (rule) => rule.required(),
+    }),
+    defineField({ name: "city", title: "City", type: "string" }),
+    defineField({ name: "address", title: "Address", type: "string" }),
+    defineField({ name: "par", title: "Par", type: "number" }),
+    defineField({ name: "rating", title: "Rating", type: "number" }),
+    defineField({ name: "slope", title: "Slope", type: "number" }),
+    defineField({ name: "yardage", title: "Total Yardage", type: "number" }),
+    defineField({ name: "designer", title: "Designer", type: "string" }),
+    defineField({ name: "yearBuilt", title: "Year Built", type: "number" }),
+    defineField({ name: "practice", title: "Practice Notes", type: "text", rows: 2 }),
+    defineField({ name: "paceTarget", title: "Pace Target", type: "string" }),
+    defineField({
+      name: "walking",
+      title: "Walking Profile",
       type: "string",
       options: {
         list: [
-          { title: "North Des Moines", value: "north" },
-          { title: "South Des Moines", value: "south" },
+          { title: "Easy", value: "easy" },
+          { title: "Moderate", value: "moderate" },
+          { title: "Challenging", value: "challenging" },
         ],
       },
-      validation: (Rule) => Rule.required(),
-    },
-    {
-      name: "address",
-      title: "Address",
-      type: "string",
-    },
-    {
-      name: "coordinates",
-      title: "Coordinates",
-      type: "object",
-      fields: [
-        {
-          name: "lat",
-          title: "Latitude",
-          type: "number",
-        },
-        {
-          name: "lng",
-          title: "Longitude",
-          type: "number",
-        },
-      ],
-    },
-    {
-      name: "image",
-      title: "Course Map Image",
-      type: "image",
-      options: {
-        hotspot: true,
-      },
-    },
-    {
-      name: "holes",
-      title: "Number of Holes",
-      type: "number",
-      options: {
-        min: 9,
-        max: 27,
-      },
-    },
-    {
-      name: "par",
-      title: "Par",
-      type: "number",
-    },
-    {
-      name: "rating",
-      title: "Course Rating",
-      type: "number",
-    },
-    {
-      name: "slope",
-      title: "Slope Rating",
-      type: "number",
-    },
-    {
-      name: "yardage",
-      title: "Total Yardage",
-      type: "number",
-    },
-    {
-      name: "designer",
-      title: "Course Designer",
-      type: "string",
-    },
-    {
-      name: "yearBuilt",
-      title: "Year Built",
-      type: "number",
-    },
-    {
-      name: "website",
-      title: "Website URL",
-      type: "url",
-    },
-    {
-      name: "description",
-      title: "Course Description",
-      type: "text",
-      rows: 3,
-    },
-    {
-      name: "strategy",
-      title: "Course Strategy",
+    }),
+    defineField({ name: "summary", title: "Course Summary", type: "text", rows: 3 }),
+    defineField({
+      name: "signaturePlan",
+      title: "Signature Plan",
+      description: "Overall strategy/playbook for this course.",
       type: "text",
       rows: 4,
-    },
-    {
-      name: "holesArray",
-      title: "Holes Details",
+    }),
+    defineField({
+      name: "localTips",
+      title: "Local Tips",
       type: "array",
-      of: [
-        {
-          type: "hole",
-        },
-      ],
-    },
-    {
-      name: "lastUpdated",
-      title: "Last Updated",
-      type: "datetime",
-    },
+      of: [defineArrayMember({ type: "string" })],
+    }),
+    defineField({
+      name: "image",
+      title: "Course Image",
+      type: "image",
+      options: { hotspot: true },
+    }),
+    defineField({
+      name: "mapImage",
+      title: "Course Map Image",
+      type: "image",
+      options: { hotspot: true },
+    }),
+    defineField({
+      name: "holes",
+      title: "Holes",
+      type: "array",
+      of: [defineArrayMember({ type: "hole" })],
+      validation: (rule) => rule.min(1),
+    }),
   ],
   preview: {
     select: {
       title: "name",
-      region: "region",
+      subtitle: "region.title",
       media: "image",
     },
-    prepare({ title, region, media }) {
-      return {
-        title: title,
-        subtitle: `${region} • ${title}`,
-        media: media,
-      };
-    },
   },
-};
+});

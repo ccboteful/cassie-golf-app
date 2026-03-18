@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { ArrowRight, Flag, MapPinned, Sparkles, Wind } from "lucide-react";
-import { courses } from "@/lib/courses";
+import { getAllCourses } from "@/lib/courses";
 
 const regionCards = [
   {
@@ -19,7 +19,9 @@ const regionCards = [
   },
 ] as const;
 
-export default function HomePage() {
+export default async function HomePage() {
+  const courses = await getAllCourses();
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-emerald-50 via-white to-emerald-100/50 dark:from-zinc-950 dark:via-zinc-950 dark:to-emerald-950/40">
       <main className="mx-auto w-full max-w-3xl px-4 pb-24 pt-8">

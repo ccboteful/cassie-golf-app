@@ -1,10 +1,5 @@
-import { defineType, defineArrayMember } from "sanity";
+import course from "./course";
+import hole from "./hole";
+import region from "./region";
 
-/**
- * Export all schema types for Sanity CMS
- */
-export const schemaTypes = [
-  // Import all type definitions
-  ...(await import("./course")).default,
-  ...(await import("./hole")).default,
-];
+export const schemaTypes = [region, course, hole];

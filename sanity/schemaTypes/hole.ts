@@ -1,87 +1,99 @@
-export default {
+import { defineField, defineType } from "sanity";
+
+export default defineType({
   name: "hole",
   title: "Hole",
   type: "object",
   fields: [
-    {
+    defineField({
       name: "number",
       title: "Hole Number",
       type: "number",
-      validation: (Rule) => Rule.required().min(1).max(18),
-    },
-    {
+      validation: (rule) => rule.required().min(1).max(18),
+    }),
+    defineField({
       name: "par",
       title: "Par",
       type: "number",
-      options: {
-        list: [
-          { title: "Par 3", value: 3 },
-          { title: "Par 4", value: 4 },
-          { title: "Par 5", value: 5 },
-        ],
-      },
-      validation: (Rule) => Rule.required(),
-    },
-    {
+      validation: (rule) => rule.required().min(3).max(5),
+    }),
+    defineField({
       name: "yardage",
       title: "Yardage",
       type: "number",
-    },
-    {
+      validation: (rule) => rule.required().min(1),
+    }),
+    defineField({
       name: "handicap",
-      title: "Handicap Rating",
+      title: "Handicap",
       type: "number",
-      options: {
-        list: Array.from({ length: 18 }, (_, i) => ({
-          title: `#${i + 1}`,
-          value: i + 1,
-        })),
-      },
-    },
-    {
-      name: "type",
-      title: "Hole Type",
+      validation: (rule) => rule.required().min(1).max(18),
+    }),
+    defineField({
+      name: "wind",
+      title: "Wind Cue",
       type: "string",
-      options: {
-        list: [
-          { title: "Par 3", value: "par-3" },
-          { title: "Par 4", value: "par-4" },
-          { title: "Par 5", value: "par-5" },
-        ],
-      },
-    },
-    {
-      name: "description",
-      title: "Hole Description",
+    }),
+    defineField({
+      name: "keyFeature",
+      title: "Key Feature",
       type: "text",
       rows: 2,
-    },
-    {
+      validation: (rule) => rule.required(),
+    }),
+    defineField({
+      name: "danger",
+      title: "Danger to Avoid",
+      type: "text",
+      rows: 2,
+    }),
+    defineField({
+      name: "greenNote",
+      title: "Green Note",
+      type: "text",
+      rows: 2,
+    }),
+    defineField({
       name: "strategy",
-      title: "Strategy & Tips",
+      title: "Strategy",
       type: "text",
       rows: 3,
-    },
-    {
+      validation: (rule) => rule.required(),
+    }),
+    defineField({
+      name: "teeYardages",
+      title: "Tee Yardages",
+      type: "object",
+      fields: [
+        defineField({ name: "tips", type: "number", validation: (rule) => rule.required().min(1) }),
+        defineField({ name: "member", type: "number", validation: (rule) => rule.required().min(1) }),
+        defineField({ name: "forward", type: "number", validation: (rule) => rule.required().min(1) }),
+      ],
+    }),
+    defineField({
       name: "image",
+      title: "Hole Image",
+      type: "image",
+      options: { hotspot: true },
+    }),
+    defineField({
+      name: "mapImage",
       title: "Hole Map Image",
       type: "image",
-      options: {
-        hotspot: true,
-      },
-    },
+      options: { hotspot: true },
+    }),
   ],
   preview: {
     select: {
-      number: "number",
+      title: "number",
       par: "par",
       yardage: "yardage",
     },
-    prepare({ number, par, yardage }) {
+    prepare({ title, par, yardage }) {
       return {
-        title: `Hole ${number}`,
+        title: `Hole ${title}`,
         subtitle: `Par ${par} • ${yardage} yards`,
       };
     },
   },
-};
+});

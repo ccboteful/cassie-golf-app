@@ -1,58 +1,28 @@
-import { defineArrayMember, defineConfig, defineSchema } from "sanity";
+import { defineConfig } from "sanity";
 import { structureTool } from "sanity/structure";
 import { visionTool } from "@sanity/vision";
 import { schemaTypes } from "./schemaTypes";
 
+const projectId = process.env.SANITY_STUDIO_PROJECT_ID || process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || "";
+const dataset = process.env.SANITY_STUDIO_DATASET || process.env.NEXT_PUBLIC_SANITY_DATASET || "production";
+
 export default defineConfig({
   name: "default",
-  title: "Cassie Golf - Sanity CMS",
-
-  projectId: process.env.SANITY_STUDIO_PROJECT_ID!,
-  dataset: "production",
-
-  // Add plugins
+  title: "Cassie Golf CMS",
+  projectId,
+  dataset,
   plugins: [
     structureTool({
       structure: (S) =>
         S.list()
-          .title("Golf Courses")
+          .title("Content")
           .items([
-            S.listItem()
-              .title("Courses")
-              .child(
-                S.documentTypeList("course")
-                  .title("All Courses")
-                  .defaultOrdering([
-                    { field: "name", direction: "asc" },
-                  ])
-              ),
-            S.divider(),
-            S.listItem()
-              .title("North Des Moines")
-              .child(
-                S.documentList()
-                  .title("North Courses")
-                  .filter('_type == "course" && region == "north"')
-                  .defaultOrdering([
-                    { field: "name", direction: "asc" },
-                  ])
-              ),
-            S.listItem()
-              .title("South Des Moines")
-              .child(
-                S.documentList()
-                  .title("South Courses")
-                  .filter('_type == "course" && region == "south"')
-                  .defaultOrdering([
-                    { field: "name", direction: "asc" },
-                  ])
-              ),
+            S.listItem().title("Regions").child(S.documentTypeList("region").title("Regions")),
+            S.listItem().title("Courses").child(S.documentTypeList("course").title("Courses")),
           ]),
     }),
     visionTool(),
   ],
-
-  // Schema
   schema: {
     types: schemaTypes,
   },

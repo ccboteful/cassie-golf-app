@@ -1,9 +1,11 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowRight, Flag, Gauge, Target, Wind } from "lucide-react";
-import { courses, getCourseBySlug, getHole, getHoleNeighbors } from "@/lib/courses";
+import { getAllCourses, getCourseBySlug, getHole, getHoleNeighbors } from "@/lib/courses";
 
-export function generateStaticParams() {
+export async function generateStaticParams() {
+  const courses = await getAllCourses();
+
   return courses.flatMap((course) =>
     course.holes.map((hole) => ({
       slug: course.slug,
@@ -20,7 +22,7 @@ export default async function HolePage({
   const { slug, number } = await params;
   const holeNumber = Number(number);
 
-  const course = getCourseBySlug(slug);
+  const course = await getCourseBySlug(slug);
   if (!course || Number.isNaN(holeNumber)) notFound();
 
   const hole = getHole(course, holeNumber);

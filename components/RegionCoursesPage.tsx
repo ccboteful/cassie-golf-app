@@ -14,8 +14,8 @@ const regionMeta: Record<Region, { title: string; subtitle: string }> = {
   },
 };
 
-export function RegionCoursesPage({ region }: { region: Region }) {
-  const courses = getCoursesByRegion(region);
+export async function RegionCoursesPage({ region }: { region: Region }) {
+  const courses = await getCoursesByRegion(region);
   const meta = regionMeta[region];
 
   return (

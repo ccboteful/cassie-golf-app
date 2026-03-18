@@ -11,15 +11,16 @@ import {
   Trophy,
   Waves,
 } from "lucide-react";
-import { courses, getCourseBySlug } from "@/lib/courses";
+import { getAllCourses, getCourseBySlug } from "@/lib/courses";
 
-export function generateStaticParams() {
+export async function generateStaticParams() {
+  const courses = await getAllCourses();
   return courses.map((course) => ({ slug: course.slug }));
 }
 
 export default async function CoursePage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  const course = getCourseBySlug(slug);
+  const course = await getCourseBySlug(slug);
 
   if (!course) notFound();
 
