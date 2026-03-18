@@ -1,0 +1,11 @@
+name = "cassie-golf-app"
+main = "worker.js"
+compatibility_date = "2026-03-18"
+workers_dev = true
+
+routes = [
+  { pattern = "golf.lakehouse-studios.com/*", zone_name = "lakehouse-studios.com" }
+]
+
+[assets]
+directory = "./out"
