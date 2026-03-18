@@ -53,13 +53,13 @@ export default async function HolePage({
       <main className="mx-auto w-full max-w-3xl space-y-4 px-4 pt-5">
         {hole.imageUrl ? (
           <section className="overflow-hidden rounded-2xl border border-emerald-200/80 bg-white shadow-sm dark:border-emerald-900 dark:bg-zinc-900/75">
-            <div className="relative h-56 w-full sm:h-72">
+            <div className="relative h-[58vh] min-h-[320px] w-full bg-emerald-50/40 sm:h-72 dark:bg-zinc-950/40">
               <Image
                 src={hole.imageUrl}
                 alt={`${course.name} hole ${hole.number} image`}
                 fill
-                className="object-cover"
-                sizes="(max-width: 768px) 100vw, 768px"
+                className="object-contain sm:object-cover"
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 768px"
               />
             </div>
           </section>
