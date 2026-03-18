@@ -26,16 +26,23 @@ Fallback/local seed data is stored in:
 Downloaded from official DMGCC public image endpoints and stored locally under `public/images/dmgcc/`:
 
 - `public/images/dmgcc/overview/club-golf-banner.jpg`
-  - Source: https://dmgcc.org/images/dynamic/getImage.gif?ID=100117
+  - Source: https://dmgcc.org/images/dynamic/getImage.gif?ID=100117&width=2400
   - Note: this is the shared golf page hero image (club-level), not a dedicated per-course aerial.
 
 - North hole images:
   - `public/images/dmgcc/north/hole-01.jpg` ... `hole-18.jpg`
-  - Sources: `ID=100158` ... `ID=100175`
+  - Sources: `https://dmgcc.org/images/dynamic/getImage.gif?ID=100158&width=1600` ... `ID=100175&width=1600`
 
 - South hole images:
   - `public/images/dmgcc/south/hole-01.jpg` ... `hole-18.jpg`
-  - Sources: `ID=100177` ... `ID=100194`
+  - Sources: `https://dmgcc.org/images/dynamic/getImage.gif?ID=100177&width=1600` ... `ID=100194&width=1600`
+
+### High-resolution refresh (2026-03-18)
+- Prior hole assets were all `600x825` images from the same official IDs.
+- Official endpoint supports width parameter (`&width=`) and returns larger public renditions.
+- Hole assets were refreshed to `1600x2200` (same aspect ratio, sharper detail).
+- Overview image refreshed from `1600x899` to `2400x1348`.
+- Replacement audit report: `evidence/highres-replacement-report.json`.
 
 Raw downloads were used during ingestion and are not required at runtime.
 
