@@ -1,8 +1,17 @@
 import type { Metadata, Viewport } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Playfair_Display } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-body",
+});
+
+const playfair = Playfair_Display({
+  subsets: ["latin"],
+  variable: "--font-display",
+  weight: ["600", "700"],
+});
 
 export const metadata: Metadata = {
   title: "Cassie - Des Moines Golf Navigator",
@@ -20,10 +29,7 @@ export const viewport: Viewport = {
   initialScale: 1,
   maximumScale: 1,
   userScalable: false,
-  themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
-    { media: "(prefers-color-scheme: dark)", color: "#1a1a2e" },
-  ],
+  themeColor: "#FBF8F2",
 };
 
 export default function RootLayout({
@@ -33,7 +39,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="h-full">
-      <body className={`${inter.className} h-full`}>{children}</body>
+      <body className={`${inter.variable} ${playfair.variable} h-full`}>{children}</body>
     </html>
   );
 }

@@ -4,48 +4,26 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-    --primary: 142 76% 36%;
-    --primary-foreground: 355.7 100% 97.3%;
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 142 76% 36%;
-    --radius: 0.75rem;
-  }
-
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-    --primary: 142 76% 36%;
-    --primary-foreground: 355.7 100% 97.3%;
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 142 76% 36%;
+    --background: 37 43% 97%;
+    --foreground: 120 8% 20%;
+    --card: 37 35% 95%;
+    --card-foreground: 120 8% 20%;
+    --popover: 37 35% 95%;
+    --popover-foreground: 120 8% 20%;
+    --primary: 135 12% 38%;
+    --primary-foreground: 38 50% 95%;
+    --secondary: 100 18% 92%;
+    --secondary-foreground: 120 8% 20%;
+    --muted: 100 18% 92%;
+    --muted-foreground: 35 8% 46%;
+    --accent: 100 18% 92%;
+    --accent-foreground: 120 8% 20%;
+    --destructive: 0 72% 52%;
+    --destructive-foreground: 38 50% 95%;
+    --border: 98 11% 85%;
+    --input: 98 11% 85%;
+    --ring: 135 12% 38%;
+    --radius: 1rem;
   }
 }
 
@@ -53,31 +31,41 @@
   * {
     @apply border-border;
   }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
     @apply bg-background text-foreground;
+    font-family: var(--font-body), Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
     font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  h1,
+  h2,
+  h3,
+  .font-display {
+    font-family: var(--font-display), "Playfair Display", Georgia, serif;
+    color: #2f352f;
+  }
+
+  button,
+  a,
+  input,
+  select,
+  textarea {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  * {
+    touch-action: manipulation;
   }
 }
 
-/* Mobile-first optimizations */
 @media (max-width: 768px) {
   html {
     font-size: 16px;
   }
-}
-
-/* Smooth scrolling */
-html {
-  scroll-behavior: smooth;
-}
-
-/* Touch-friendly tap targets */
-button, a, input, select, textarea {
-  min-height: 44px;
-  min-width: 44px;
-}
-
-/* Prevent zoom on double-tap */
-* {
-  touch-action: manipulation;
 }

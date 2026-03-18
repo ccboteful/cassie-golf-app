@@ -1,51 +1,56 @@
+import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Flag, MapPinned, Sparkles, Wind } from "lucide-react";
+import { ArrowRight, Flag, Sparkles, Wind } from "lucide-react";
 import { getAllCourses } from "@/lib/courses";
-
-const regionCards = [
-  {
-    key: "north",
-    href: "/north",
-    title: "DMGCC North Course",
-    subtitle: "Official hole descriptions, yardages, and imagery",
-    tone: "from-emerald-500 to-lime-500",
-  },
-  {
-    key: "south",
-    href: "/south",
-    title: "DMGCC South Course",
-    subtitle: "Official hole descriptions, yardages, and imagery",
-    tone: "from-teal-500 to-emerald-600",
-  },
-] as const;
 
 export default async function HomePage() {
   const courses = await getAllCourses();
 
+  const northPreview = courses.find((course) => course.region === "north");
+  const southPreview = courses.find((course) => course.region === "south");
+
+  const regionCards = [
+    {
+      key: "north",
+      href: "/north",
+      title: "North Course",
+      descriptor: "Tree-lined strategy with classic Midwest shaping.",
+      imageUrl: northPreview?.imageUrl,
+    },
+    {
+      key: "south",
+      href: "/south",
+      title: "South Course",
+      descriptor: "A bolder routing with exposure to wind and longer asks.",
+      imageUrl: southPreview?.imageUrl,
+    },
+  ] as const;
+
   return (
-    <div className="min-h-screen bg-gradient-to-b from-emerald-50 via-white to-emerald-100/50 dark:from-zinc-950 dark:via-zinc-950 dark:to-emerald-950/40">
-      <main className="mx-auto w-full max-w-3xl px-4 pb-24 pt-8">
-        <section className="rounded-3xl border border-emerald-200/80 bg-white p-5 shadow-sm dark:border-emerald-900 dark:bg-zinc-900/80">
-          <div className="inline-flex items-center gap-1 rounded-full bg-emerald-100 px-3 py-1 text-xs font-semibold text-emerald-800 dark:bg-emerald-900/80 dark:text-emerald-200">
-            <Flag className="h-3.5 w-3.5" /> Cassie Golf Guide
+    <div className="min-h-screen bg-[#FBF8F2]">
+      <main className="mx-auto w-full max-w-4xl px-4 pb-20 pt-8">
+        <section className="rounded-[20px] border border-[#D9DDD5] bg-[#F7F3EC] p-5 shadow-[0_6px_20px_rgba(47,53,47,0.06)] sm:p-8">
+          <div className="inline-flex items-center gap-1 rounded-full border border-[#D9DDD5] bg-[#FBF8F2] px-3 py-1 text-xs font-semibold text-[#556B5D]">
+            <Flag className="h-3.5 w-3.5" /> Cassie Club Guide
           </div>
-          <h1 className="mt-3 text-3xl font-black leading-tight text-zinc-900 dark:text-zinc-100">
-            Course + hole strategy for Des Moines rounds.
+          <h1 className="mt-4 font-display text-3xl font-semibold leading-tight text-[#2F352F] sm:text-4xl">
+            Course and hole strategy for better rounds at DMGCC.
           </h1>
-          <p className="mt-3 text-sm text-zinc-700 dark:text-zinc-300">
-            Pick your region, open a course, then drill into every hole with wind reads, danger notes,
-            and local strategy that actually helps you score.
+          <p className="mt-3 max-w-2xl text-sm leading-relaxed text-[#4B524B] sm:text-base">
+            Pick a course, jump into any hole, and get practical local guidance on wind, misses,
+            and scoring decisions—organized for fast use during a round.
           </p>
-          <div className="mt-4 grid grid-cols-2 gap-2 text-xs sm:grid-cols-3">
-            <div className="rounded-xl bg-emerald-50 p-2 text-zinc-700 dark:bg-emerald-900/30 dark:text-zinc-200">
-              <span className="font-semibold">{courses.length}</span> DMGCC courses
-            </div>
-            <div className="rounded-xl bg-emerald-50 p-2 text-zinc-700 dark:bg-emerald-900/30 dark:text-zinc-200">
-              <span className="font-semibold">{courses.length * 18}</span> hole briefs
-            </div>
-            <div className="rounded-xl bg-emerald-50 p-2 text-zinc-700 dark:bg-emerald-900/30 dark:text-zinc-200 col-span-2 sm:col-span-1">
-              Mobile-first UI
-            </div>
+
+          <div className="mt-5 flex flex-wrap gap-2">
+            <span className="inline-flex items-center rounded-full border border-[#D9DDD5] bg-[#FBF8F2] px-3 py-1 text-xs font-medium text-[#2F352F]">
+              {courses.length} DMGCC courses
+            </span>
+            <span className="inline-flex items-center rounded-full border border-[#D9DDD5] bg-[#FBF8F2] px-3 py-1 text-xs font-medium text-[#2F352F]">
+              {courses.length * 18} hole briefs
+            </span>
+            <span className="inline-flex items-center rounded-full border border-[#D9DDD5] bg-[#FBF8F2] px-3 py-1 text-xs font-medium text-[#2F352F]">
+              Mobile-first design
+            </span>
           </div>
         </section>
 
@@ -54,37 +59,43 @@ export default async function HomePage() {
             <Link
               key={region.key}
               href={region.href}
-              className="group relative overflow-hidden rounded-2xl border border-emerald-200 bg-white p-4 shadow-sm transition-all hover:-translate-y-0.5 hover:shadow-lg dark:border-emerald-900 dark:bg-zinc-900"
+              className="group overflow-hidden rounded-[20px] border border-[#D9DDD5] bg-[#F7F3EC] shadow-[0_6px_20px_rgba(47,53,47,0.05)] transition-all hover:-translate-y-0.5 hover:shadow-[0_12px_24px_rgba(47,53,47,0.08)]"
             >
-              <div className={`absolute inset-0 opacity-10 bg-gradient-to-br ${region.tone}`} />
-              <div className="relative">
-                <MapPinned className="h-6 w-6 text-emerald-700 dark:text-emerald-300" />
-                <h2 className="mt-2 text-xl font-bold text-zinc-900 dark:text-zinc-100">{region.title}</h2>
-                <p className="mt-1 text-sm text-zinc-700 dark:text-zinc-300">{region.subtitle}</p>
-                <div className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-emerald-700 transition-all group-hover:gap-2 dark:text-emerald-300">
-                  Explore <ArrowRight className="h-4 w-4" />
+              {region.imageUrl ? (
+                <div className="relative h-44 w-full overflow-hidden">
+                  <Image
+                    src={region.imageUrl}
+                    alt={`${region.title} hero image`}
+                    fill
+                    className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                  />
                 </div>
+              ) : (
+                <div className="h-44 w-full bg-gradient-to-br from-[#DDE5DA] to-[#EFF3EC]" />
+              )}
+
+              <div className="p-5">
+                <h2 className="font-display text-2xl font-semibold text-[#2F352F]">{region.title}</h2>
+                <p className="mt-1 text-sm text-[#4B524B]">{region.descriptor}</p>
+                <span className="mt-4 inline-flex items-center gap-1 rounded-2xl bg-[#556B5D] px-4 py-2 text-sm font-semibold text-[#F9F5EC] transition-all group-hover:gap-2">
+                  Explore Course <ArrowRight className="h-4 w-4" />
+                </span>
               </div>
             </Link>
           ))}
         </section>
 
-        <section className="mt-8 grid gap-3 sm:grid-cols-3">
-          <div className="rounded-2xl border border-emerald-200/80 bg-white p-4 dark:border-emerald-900 dark:bg-zinc-900/70">
-            <Sparkles className="h-5 w-5 text-emerald-600" />
-            <h3 className="mt-2 font-semibold text-zinc-900 dark:text-zinc-100">Deeper course detail</h3>
-            <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-300">Practice setup, pace targets, and local notes per course.</p>
-          </div>
-          <div className="rounded-2xl border border-emerald-200/80 bg-white p-4 dark:border-emerald-900 dark:bg-zinc-900/70">
-            <Wind className="h-5 w-5 text-emerald-600" />
-            <h3 className="mt-2 font-semibold text-zinc-900 dark:text-zinc-100">Hole-by-hole reads</h3>
-            <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-300">Wind, carry danger, and green notes from tee to approach.</p>
-          </div>
-          <div className="rounded-2xl border border-emerald-200/80 bg-white p-4 dark:border-emerald-900 dark:bg-zinc-900/70">
-            <Flag className="h-5 w-5 text-emerald-600" />
-            <h3 className="mt-2 font-semibold text-zinc-900 dark:text-zinc-100">Round-ready UX</h3>
-            <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-300">Large tap targets, sticky nav, and quick hole jumps on mobile.</p>
-          </div>
+        <section className="mt-7 flex flex-wrap gap-2">
+          <span className="inline-flex items-center gap-1 rounded-full bg-[#E8EEE7] px-3 py-1.5 text-xs font-medium text-[#2F352F]">
+            <Sparkles className="h-3.5 w-3.5 text-[#556B5D]" /> Local playing notes
+          </span>
+          <span className="inline-flex items-center gap-1 rounded-full bg-[#E8EEE7] px-3 py-1.5 text-xs font-medium text-[#2F352F]">
+            <Wind className="h-3.5 w-3.5 text-[#556B5D]" /> Wind and carry cues
+          </span>
+          <span className="inline-flex items-center gap-1 rounded-full bg-[#E8EEE7] px-3 py-1.5 text-xs font-medium text-[#2F352F]">
+            <Flag className="h-3.5 w-3.5 text-[#556B5D]" /> Fast hole jump
+          </span>
         </section>
       </main>
     </div>
