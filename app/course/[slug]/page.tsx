@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import {
@@ -17,6 +18,8 @@ export async function generateStaticParams() {
   const courses = await getAllCourses();
   return courses.map((course) => ({ slug: course.slug }));
 }
+
+const metricValue = (value: number) => (value > 0 ? value : "TBD");
 
 export default async function CoursePage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
@@ -43,6 +46,20 @@ export default async function CoursePage({ params }: { params: Promise<{ slug: s
       </header>
 
       <main className="mx-auto w-full max-w-3xl space-y-4 px-4 pt-5">
+        {course.imageUrl ? (
+          <section className="overflow-hidden rounded-2xl border border-emerald-200/80 bg-white shadow-sm dark:border-emerald-900 dark:bg-zinc-900/75">
+            <div className="relative h-56 w-full sm:h-72">
+              <Image
+                src={course.imageUrl}
+                alt={`${course.name} overview image`}
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 768px"
+              />
+            </div>
+          </section>
+        ) : null}
+
         <section className="rounded-2xl border border-emerald-200/80 bg-white p-4 shadow-sm dark:border-emerald-900 dark:bg-zinc-900/75">
           <p className="text-sm text-zinc-700 dark:text-zinc-300">{course.summary}</p>
           <div className="mt-4 grid grid-cols-2 gap-2 text-sm sm:grid-cols-4">
@@ -52,7 +69,7 @@ export default async function CoursePage({ params }: { params: Promise<{ slug: s
             </div>
             <div className="rounded-xl bg-emerald-50 p-2 dark:bg-emerald-900/30">
               <div className="text-[11px] uppercase text-zinc-500 dark:text-zinc-300">Rating / slope</div>
-              <div className="font-semibold text-zinc-900 dark:text-zinc-100">{course.rating} / {course.slope}</div>
+              <div className="font-semibold text-zinc-900 dark:text-zinc-100">{metricValue(course.rating)} / {metricValue(course.slope)}</div>
             </div>
             <div className="rounded-xl bg-emerald-50 p-2 dark:bg-emerald-900/30">
               <div className="text-[11px] uppercase text-zinc-500 dark:text-zinc-300">Tips yardage</div>

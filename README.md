@@ -5,7 +5,7 @@ Next.js golf course navigator with Sanity CMS-backed content (with automatic loc
 ## What is live now
 
 - App reads courses from **Sanity** when environment variables are configured.
-- App falls back to bundled sample data in `lib/courses.ts` if Sanity is not configured or fetch fails.
+- App falls back to bundled local DMGCC data in `lib/data/dmgcc-local.json` if Sanity is not configured or fetch fails.
 - Sanity schemas are set up for:
   - `region` documents
   - `course` documents
@@ -33,7 +33,7 @@ If `.env.local` has valid `NEXT_PUBLIC_SANITY_*` values, app loads live CMS cont
 npm run sanity:dev
 ```
 
-## 3) Seed sample content into Sanity
+## 3) Seed fallback content into Sanity
 
 1. Create a Sanity API token with write access.
 2. Add `SANITY_API_TOKEN` to `.env.local`.
@@ -43,7 +43,7 @@ npm run sanity:dev
 npm run seed:sanity
 ```
 
-This seeds 2 regions + all current sample courses and holes into Sanity.
+This seeds 2 regions + current fallback courses and holes into Sanity.
 
 ## 4) Deploy Studio (optional but recommended)
 

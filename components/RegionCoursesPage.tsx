@@ -5,12 +5,12 @@ import { getCoursesByRegion, type Region } from "@/lib/courses";
 
 const regionMeta: Record<Region, { title: string; subtitle: string }> = {
   north: {
-    title: "North Des Moines",
-    subtitle: "Tree-lined routing, strategic bunkering, and classic shot values.",
+    title: "Des Moines GCC — North Course",
+    subtitle: "Official public hole descriptions + yardages from DMGCC.",
   },
   south: {
-    title: "South Des Moines",
-    subtitle: "Championship distance, wind-exposed holes, and pressure finishes.",
+    title: "Des Moines GCC — South Course",
+    subtitle: "Official public hole descriptions + yardages from DMGCC.",
   },
 };
 

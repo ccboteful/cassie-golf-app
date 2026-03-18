@@ -6,15 +6,15 @@ const regionCards = [
   {
     key: "north",
     href: "/north",
-    title: "North Des Moines",
-    subtitle: "Classic lines, tree corridors, precision approaches",
+    title: "DMGCC North Course",
+    subtitle: "Official hole descriptions, yardages, and imagery",
     tone: "from-emerald-500 to-lime-500",
   },
   {
     key: "south",
     href: "/south",
-    title: "South Des Moines",
-    subtitle: "Big carries, exposed wind, championship finishes",
+    title: "DMGCC South Course",
+    subtitle: "Official hole descriptions, yardages, and imagery",
     tone: "from-teal-500 to-emerald-600",
   },
 ] as const;
@@ -38,7 +38,7 @@ export default async function HomePage() {
           </p>
           <div className="mt-4 grid grid-cols-2 gap-2 text-xs sm:grid-cols-3">
             <div className="rounded-xl bg-emerald-50 p-2 text-zinc-700 dark:bg-emerald-900/30 dark:text-zinc-200">
-              <span className="font-semibold">{courses.length}</span> sample courses
+              <span className="font-semibold">{courses.length}</span> DMGCC courses
             </div>
             <div className="rounded-xl bg-emerald-50 p-2 text-zinc-700 dark:bg-emerald-900/30 dark:text-zinc-200">
               <span className="font-semibold">{courses.length * 18}</span> hole briefs

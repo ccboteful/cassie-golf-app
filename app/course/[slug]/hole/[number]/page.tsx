@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowRight, Flag, Gauge, Target, Wind } from "lucide-react";
@@ -13,6 +14,8 @@ export async function generateStaticParams() {
     }))
   );
 }
+
+const metricValue = (value: number) => (value > 0 ? value : "TBD");
 
 export default async function HolePage({
   params,
@@ -48,6 +51,20 @@ export default async function HolePage({
       </header>
 
       <main className="mx-auto w-full max-w-3xl space-y-4 px-4 pt-5">
+        {hole.imageUrl ? (
+          <section className="overflow-hidden rounded-2xl border border-emerald-200/80 bg-white shadow-sm dark:border-emerald-900 dark:bg-zinc-900/75">
+            <div className="relative h-56 w-full sm:h-72">
+              <Image
+                src={hole.imageUrl}
+                alt={`${course.name} hole ${hole.number} image`}
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 768px"
+              />
+            </div>
+          </section>
+        ) : null}
+
         <section className="rounded-2xl border border-emerald-200/80 bg-white p-4 shadow-sm dark:border-emerald-900 dark:bg-zinc-900/75">
           <div className="mb-3 flex flex-wrap items-center gap-2">
             <span className="rounded-full bg-emerald-100 px-3 py-1 text-xs font-semibold text-emerald-800 dark:bg-emerald-900/70 dark:text-emerald-200">
@@ -83,9 +100,9 @@ export default async function HolePage({
               <div className="inline-flex items-center gap-1 text-xs uppercase text-zinc-500 dark:text-zinc-300">
                 <Flag className="h-3.5 w-3.5 text-emerald-600" /> Tee yardages
               </div>
-              <p className="mt-1 text-zinc-700 dark:text-zinc-200">Tips: {hole.teeYardages.tips}</p>
-              <p className="text-zinc-700 dark:text-zinc-200">Member: {hole.teeYardages.member}</p>
-              <p className="text-zinc-700 dark:text-zinc-200">Forward: {hole.teeYardages.forward}</p>
+              <p className="mt-1 text-zinc-700 dark:text-zinc-200">Tips: {metricValue(hole.teeYardages.tips)}</p>
+              <p className="text-zinc-700 dark:text-zinc-200">Member: {metricValue(hole.teeYardages.member)}</p>
+              <p className="text-zinc-700 dark:text-zinc-200">Forward: {metricValue(hole.teeYardages.forward)}</p>
             </div>
             <div className="rounded-xl bg-zinc-50 p-3 dark:bg-zinc-800/60">
               <div className="inline-flex items-center gap-1 text-xs uppercase text-zinc-500 dark:text-zinc-300">

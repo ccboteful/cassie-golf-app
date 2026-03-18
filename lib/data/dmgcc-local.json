@@ -1,0 +1,704 @@
+[
+  {
+    "slug": "dmgcc-north-course",
+    "name": "Des Moines Golf & Country Club \u2014 North Course",
+    "region": "north",
+    "city": "West Des Moines",
+    "address": "1600 Jordan Creek Parkway, West Des Moines, IA 50266",
+    "par": 72,
+    "rating": 0,
+    "slope": 0,
+    "yardage": 7301,
+    "designer": "Pete Dye",
+    "yearBuilt": 1967,
+    "practice": "Private club practice facilities (public details limited on official site).",
+    "paceTarget": "Not publicly posted",
+    "walking": "challenging",
+    "summary": "Private 18-hole North Course at Des Moines Golf & Country Club with official hole-by-hole descriptions and yardages published by the club.",
+    "signaturePlan": "Play to the widest fairway side and respect Pete Dye false fronts; many holes reward angle over raw distance.",
+    "localTips": [
+      "Hole descriptions and yardages sourced from the official DMGCC golf page.",
+      "North #12 uses split yardages by pin/green section on the official page.",
+      "USGA course rating/slope were not found on an official public page during this update."
+    ],
+    "holes": [
+      {
+        "number": 1,
+        "par": 4,
+        "yardage": 402,
+        "handicap": 7,
+        "wind": "Public source does not publish a per-hole wind chart.",
+        "keyFeature": "The uphill par 4 is well defined by bunkers both on the inside and outside of the fairway on this dogleg left opening hole. A tee shot finding the fairway will face an uphill second to a blind putting surface sitting above the player. Be sure to carry your approach to the green as Mr. Dye introduces you to the first of many false fronts that await.",
+        "danger": "Refer to the official hole description and on-site markers; no standalone public danger note is published.",
+        "greenNote": "Green contour details are included in the official hole description when provided.",
+        "strategy": "Use the official hole description for shape/position guidance; confirm exact carry numbers on-site.",
+        "teeYardages": {
+          "tips": 402,
+          "member": 381,
+          "forward": 288
+        },
+        "imageUrl": "/images/dmgcc/north/hole-01.jpg",
+        "mapImageUrl": null
+      },
+      {
+        "number": 2,
+        "par": 5,
+        "yardage": 615,
+        "handicap": 1,
+        "wind": "Public source does not publish a per-hole wind chart.",
+        "keyFeature": "This long par 5 has seen little change from its original design when it opened in 1967. The left side of the fairway is well protected by bunkers that come in to play on your tee and second shot as the hole softly doglegs twice to the left. The smallish green is well bunkered and features strong contours that flow from left to tight on the putting surface.",
+        "danger": "Refer to the official hole description and on-site markers; no standalone public danger note is published.",
+        "greenNote": "Green contour details are included in the official hole description when provided.",
+        "strategy": "Use the official hole description for shape/position guidance; confirm exact carry numbers on-site.",
+        "teeYardages": {
+          "tips": 615,
+          "member": 573,
+          "forward": 441
+        },
+        "imageUrl": "/images/dmgcc/north/hole-02.jpg",
+        "mapImageUrl": null
+      },
+      {
+        "number": 3,
+        "par": 3,
+        "yardage": 220,
+        "handicap": 15,
+        "wind": "Public source does not publish a per-hole wind chart.",
+        "keyFeature": "This front nine par 3 is downhill and downwind and can play up to 230 yards in length. It features a large, deep bunker complex guarding the right side of the green. Look for most approach shots to favor the left half side of the green which is slightly shorter and more accessible.",
+        "danger": "Refer to the official hole description and on-site markers; no standalone public danger note is published.",
+        "greenNote": "Green contour details are included in the official hole description when provided.",
+        "strategy": "Use the official hole description for shape/position guidance; confirm exact carry numbers on-site.",
+        "teeYardages": {
+          "tips": 220,
+          "member": 192,
+          "forward": 121
+        },
+        "imageUrl": "/images/dmgcc/north/hole-03.jpg",
+        "mapImageUrl": null
+      },
+      {
+        "number": 4,
+        "par": 4,
+        "yardage": 409,
+        "handicap": 13,
+        "wind": "Public source does not publish a per-hole wind chart.",
+        "keyFeature": "The first of four holes running west to east, the dogleg left par 4 will require a precise tee shot to negotiate the bunkers down the right side and the trees left. Once in the fairway, the player will have a relatively short approach shot with the day\u2019s hole location quickly dictating strategy. The right half of the green is more open and receptive while the left half of the green is shallow and fronted by a large, deep bunker.",
+        "danger": "Refer to the official hole description and on-site markers; no standalone public danger note is published.",
+        "greenNote": "Green contour details are included in the official hole description when provided.",
+        "strategy": "Use the official hole description for shape/position guidance; confirm exact carry numbers on-site.",
+        "teeYardages": {
+          "tips": 409,
+          "member": 372,
+          "forward": 299
+        },
+        "imageUrl": "/images/dmgcc/north/hole-04.jpg",
+        "mapImageUrl": null
+      },
+      {
+        "number": 5,
+        "par": 3,
+        "yardage": 215,
+        "handicap": 17,
+        "wind": "Public source does not publish a per-hole wind chart.",
+        "keyFeature": "Measuring up to 225 yards in length the par 3 fifth features an ample landing area giving players the opportunity (similar to hole #3) to play along the ground and onto the putting surface. Playing slightly uphill, the green has a narrow opening and is guarded by bunkers right and left, club selection is important if the player is to reach the putting surface safely.",
+        "danger": "Refer to the official hole description and on-site markers; no standalone public danger note is published.",
+        "greenNote": "Green contour details are included in the official hole description when provided.",
+        "strategy": "Use the official hole description for shape/position guidance; confirm exact carry numbers on-site.",
+        "teeYardages": {
+          "tips": 215,
+          "member": 189,
+          "forward": 112
+        },
+        "imageUrl": "/images/dmgcc/north/hole-05.jpg",
+        "mapImageUrl": null
+      },
+      {
+        "number": 6,
+        "par": 4,
+        "yardage": 451,
+        "handicap": 11,
+        "wind": "Public source does not publish a per-hole wind chart.",
+        "keyFeature": "Originally a par 5 this hole is now a longer, downhill par 4. Cross bunkers have been removed and replaced by a lone fairway bunker on the left side. Once the player safely avoids the bunker from the tee he should have a mid-iron approach to a wide green that features one of Pete\u2019s many false fronts on the left and a deep bunker guarding the right hand side.",
+        "danger": "Refer to the official hole description and on-site markers; no standalone public danger note is published.",
+        "greenNote": "Green contour details are included in the official hole description when provided.",
+        "strategy": "Use the official hole description for shape/position guidance; confirm exact carry numbers on-site.",
+        "teeYardages": {
+          "tips": 451,
+          "member": 403,
+          "forward": 341
+        },
+        "imageUrl": "/images/dmgcc/north/hole-06.jpg",
+        "mapImageUrl": null
+      },
+      {
+        "number": 7,
+        "par": 4,
+        "yardage": 395,
+        "handicap": 9,
+        "wind": "Public source does not publish a per-hole wind chart.",
+        "keyFeature": "The picturesque par 4 plays uphill and right to left as the players complete their \u201cwest to east run\u201d and turn for home. A tee shot that favors the right side of the fairway will be left with a shorter iron to a large green that sits above the player and slopes gently away and to the left rear.",
+        "danger": "Refer to the official hole description and on-site markers; no standalone public danger note is published.",
+        "greenNote": "Green contour details are included in the official hole description when provided.",
+        "strategy": "Use the official hole description for shape/position guidance; confirm exact carry numbers on-site.",
+        "teeYardages": {
+          "tips": 395,
+          "member": 375,
+          "forward": 288
+        },
+        "imageUrl": "/images/dmgcc/north/hole-07.jpg",
+        "mapImageUrl": null
+      },
+      {
+        "number": 8,
+        "par": 4,
+        "yardage": 400,
+        "handicap": 5,
+        "wind": "Public source does not publish a per-hole wind chart.",
+        "keyFeature": "Player\u2019s tee shots must carry or avoid the fairway bunkering on the inside of the dogleg right to position themselves for a short iron approach. An option is to play the right side of this split fairway but that leaves the player with a more challenging shot to this smaller elevated green that is well bunkered.",
+        "danger": "Refer to the official hole description and on-site markers; no standalone public danger note is published.",
+        "greenNote": "Green contour details are included in the official hole description when provided.",
+        "strategy": "Use the official hole description for shape/position guidance; confirm exact carry numbers on-site.",
+        "teeYardages": {
+          "tips": 400,
+          "member": 376,
+          "forward": 288
+        },
+        "imageUrl": "/images/dmgcc/north/hole-08.jpg",
+        "mapImageUrl": null
+      },
+      {
+        "number": 9,
+        "par": 5,
+        "yardage": 540,
+        "handicap": 3,
+        "wind": "Public source does not publish a per-hole wind chart.",
+        "keyFeature": "The par 5 finishing 9th hole plays uphill and into the prevailing wind. Longer players who negotiate the fairway bunkering down the right will have a chance at this narrow, undulated green with their second shot. Look for most players to lay up and play a short iron third shot. Only a well struck approach will find this small target that falls away on three of its four sides!",
+        "danger": "Refer to the official hole description and on-site markers; no standalone public danger note is published.",
+        "greenNote": "Green contour details are included in the official hole description when provided.",
+        "strategy": "Use the official hole description for shape/position guidance; confirm exact carry numbers on-site.",
+        "teeYardages": {
+          "tips": 540,
+          "member": 498,
+          "forward": 417
+        },
+        "imageUrl": "/images/dmgcc/north/hole-09.jpg",
+        "mapImageUrl": null
+      },
+      {
+        "number": 10,
+        "par": 4,
+        "yardage": 366,
+        "handicap": 14,
+        "wind": "Public source does not publish a per-hole wind chart.",
+        "keyFeature": "This short, reachable par 4 looks very inviting from the tee box, but don't be fooled. When the courses first opened in 1967 this was #1 on the North course. As he has done with many of his designs, Pete Dye tempts the player with a \"benign\" appearing opening hole. Often inducing the player to pull out their driver and swing away at the green, be forewarned, water stretches down the entire left side of the hole, tee shots finding the well bunkered right side will face a shot into a small severely pitched green (another of Pete's trademarks) . A tee shot of 225 yards (green tees) will put the player in position for an approach of approximately 100 yards.",
+        "danger": "Refer to the official hole description and on-site markers; no standalone public danger note is published.",
+        "greenNote": "Green contour details are included in the official hole description when provided.",
+        "strategy": "Use the official hole description for shape/position guidance; confirm exact carry numbers on-site.",
+        "teeYardages": {
+          "tips": 366,
+          "member": 321,
+          "forward": 260
+        },
+        "imageUrl": "/images/dmgcc/north/hole-10.jpg",
+        "mapImageUrl": null
+      },
+      {
+        "number": 11,
+        "par": 4,
+        "yardage": 414,
+        "handicap": 10,
+        "wind": "Public source does not publish a per-hole wind chart.",
+        "keyFeature": "This soft dogleg left par 4 features fairway bunkering and a right to left sloping fairway placing accuracy on the player\u2019s tee shot. The approach shot must be placed accurately into this large sloping green which features many challenging hole locations and is bunkered on the left side.",
+        "danger": "Refer to the official hole description and on-site markers; no standalone public danger note is published.",
+        "greenNote": "Green contour details are included in the official hole description when provided.",
+        "strategy": "Use the official hole description for shape/position guidance; confirm exact carry numbers on-site.",
+        "teeYardages": {
+          "tips": 414,
+          "member": 392,
+          "forward": 269
+        },
+        "imageUrl": "/images/dmgcc/north/hole-11.jpg",
+        "mapImageUrl": null
+      },
+      {
+        "number": 12,
+        "par": 3,
+        "yardage": 194,
+        "handicap": 18,
+        "wind": "Public source does not publish a per-hole wind chart.",
+        "keyFeature": "This beautiful par 3 features water, sand and a unique horseshoe shaped green. Tee shots to the large, generous front green will range from 95 to 160 yards. When the pin is placed in back, the shot will range from 129 to 194 yards to a green that is half the size!",
+        "danger": "Refer to the official hole description and on-site markers; no standalone public danger note is published.",
+        "greenNote": "Green contour details are included in the official hole description when provided. Note: official scorecard shows split yardages for alternate pin/green positions.",
+        "strategy": "Use the official hole description for shape/position guidance; confirm exact carry numbers on-site.",
+        "teeYardages": {
+          "tips": 194,
+          "member": 138,
+          "forward": 129
+        },
+        "imageUrl": "/images/dmgcc/north/hole-12.jpg",
+        "mapImageUrl": null
+      },
+      {
+        "number": 13,
+        "par": 5,
+        "yardage": 583,
+        "handicap": 2,
+        "wind": "Public source does not publish a per-hole wind chart.",
+        "keyFeature": "This challenging par 5 plays into the prevailing breeze and is unreachable except for the longest of hitters. Most players will layup in two for a short to mid-iron third shot. Players who have positioned their ball to the left and short of the pin will be rewarded with a straighter, uphill putt on this long, undulating green.",
+        "danger": "Refer to the official hole description and on-site markers; no standalone public danger note is published.",
+        "greenNote": "Green contour details are included in the official hole description when provided.",
+        "strategy": "Use the official hole description for shape/position guidance; confirm exact carry numbers on-site.",
+        "teeYardages": {
+          "tips": 583,
+          "member": 551,
+          "forward": 432
+        },
+        "imageUrl": "/images/dmgcc/north/hole-13.jpg",
+        "mapImageUrl": null
+      },
+      {
+        "number": 14,
+        "par": 4,
+        "yardage": 472,
+        "handicap": 8,
+        "wind": "Public source does not publish a per-hole wind chart.",
+        "keyFeature": "The dogleg left par 4 was originally a par 5 that Pete Dye remodeled into a long par 4. A player's tee shots will need to avoid the fairway bunkers on the left side of the fairway to gain the best angle of approach for a difficult second shot.",
+        "danger": "Refer to the official hole description and on-site markers; no standalone public danger note is published.",
+        "greenNote": "Green contour details are included in the official hole description when provided.",
+        "strategy": "Use the official hole description for shape/position guidance; confirm exact carry numbers on-site.",
+        "teeYardages": {
+          "tips": 472,
+          "member": 439,
+          "forward": 312
+        },
+        "imageUrl": "/images/dmgcc/north/hole-14.jpg",
+        "mapImageUrl": null
+      },
+      {
+        "number": 15,
+        "par": 4,
+        "yardage": 441,
+        "handicap": 12,
+        "wind": "Public source does not publish a per-hole wind chart.",
+        "keyFeature": "This dogleg right par will again play into the prevailing wind and players tee shots must avoid the fairway bunkers located on the inside of the dogleg. The second shots must be accurately gauged into the long undulating green which stretches 50 yards from front to back.",
+        "danger": "Refer to the official hole description and on-site markers; no standalone public danger note is published.",
+        "greenNote": "Green contour details are included in the official hole description when provided.",
+        "strategy": "Use the official hole description for shape/position guidance; confirm exact carry numbers on-site.",
+        "teeYardages": {
+          "tips": 441,
+          "member": 396,
+          "forward": 297
+        },
+        "imageUrl": "/images/dmgcc/north/hole-15.jpg",
+        "mapImageUrl": null
+      },
+      {
+        "number": 16,
+        "par": 4,
+        "yardage": 356,
+        "handicap": 4,
+        "wind": "Public source does not publish a per-hole wind chart.",
+        "keyFeature": "This shorter par 4 (typically playing downwind) will yield its share of birdies. A tee shot of 220-240 yards will leave the player a 120-140 yard approach, the green flat by comparison to others, is guarded by a trademark Dye bunker in front, deep and unforgiving!",
+        "danger": "Refer to the official hole description and on-site markers; no standalone public danger note is published.",
+        "greenNote": "Green contour details are included in the official hole description when provided.",
+        "strategy": "Use the official hole description for shape/position guidance; confirm exact carry numbers on-site.",
+        "teeYardages": {
+          "tips": 356,
+          "member": 337,
+          "forward": 293
+        },
+        "imageUrl": "/images/dmgcc/north/hole-16.jpg",
+        "mapImageUrl": null
+      },
+      {
+        "number": 17,
+        "par": 3,
+        "yardage": 195,
+        "handicap": 16,
+        "wind": "Public source does not publish a per-hole wind chart.",
+        "keyFeature": "This hole remains almost exactly as Pete designed it, a 130-180 yd. par 3, with an offset opening on the left and a green that flows left to right. The depth of the green (35 yards) is hidden by the top lip of the front bunker.",
+        "danger": "Refer to the official hole description and on-site markers; no standalone public danger note is published.",
+        "greenNote": "Green contour details are included in the official hole description when provided.",
+        "strategy": "Use the official hole description for shape/position guidance; confirm exact carry numbers on-site.",
+        "teeYardages": {
+          "tips": 195,
+          "member": 171,
+          "forward": 115
+        },
+        "imageUrl": "/images/dmgcc/north/hole-17.jpg",
+        "mapImageUrl": null
+      },
+      {
+        "number": 18,
+        "par": 5,
+        "yardage": 633,
+        "handicap": 6,
+        "wind": "Public source does not publish a per-hole wind chart.",
+        "keyFeature": "Only the longest of hitters will reach this dogleg left par 5. Most players will try to favor the right side of this heavily contoured fairway in hopes of keeping their tee shot in the short grass. A second shot lay-up of 200 +/- yards should leave a third shot of approximately 110-130 yards, be watchful of the false front waiting to pull your approach shot back off the green.",
+        "danger": "Refer to the official hole description and on-site markers; no standalone public danger note is published.",
+        "greenNote": "Green contour details are included in the official hole description when provided.",
+        "strategy": "Use the official hole description for shape/position guidance; confirm exact carry numbers on-site.",
+        "teeYardages": {
+          "tips": 633,
+          "member": 552,
+          "forward": 430
+        },
+        "imageUrl": "/images/dmgcc/north/hole-18.jpg",
+        "mapImageUrl": null
+      }
+    ],
+    "imageUrl": "/images/dmgcc/overview/club-golf-banner.jpg",
+    "mapImageUrl": "/images/dmgcc/overview/club-golf-banner.jpg"
+  },
+  {
+    "slug": "dmgcc-south-course",
+    "name": "Des Moines Golf & Country Club \u2014 South Course",
+    "region": "south",
+    "city": "West Des Moines",
+    "address": "1600 Jordan Creek Parkway, West Des Moines, IA 50266",
+    "par": 72,
+    "rating": 0,
+    "slope": 0,
+    "yardage": 7347,
+    "designer": "Pete Dye",
+    "yearBuilt": 1967,
+    "practice": "Private club practice facilities (public details limited on official site).",
+    "paceTarget": "Not publicly posted",
+    "walking": "challenging",
+    "summary": "Private 18-hole South Course at Des Moines Golf & Country Club with official hole-by-hole descriptions and yardages published by the club.",
+    "signaturePlan": "Favor proper angles into strongly contoured greens and avoid short-siding around Dye bunkering and water lines.",
+    "localTips": [
+      "Hole descriptions and yardages sourced from the official DMGCC golf page.",
+      "South #12 has an apparent tee-yardage anomaly on the official page (blue tees listed longer than black).",
+      "USGA course rating/slope were not found on an official public page during this update."
+    ],
+    "holes": [
+      {
+        "number": 1,
+        "par": 4,
+        "yardage": 426,
+        "handicap": 3,
+        "wind": "Public source does not publish a per-hole wind chart.",
+        "keyFeature": "Tee shots favoring the right side will leave a short iron approach on this 370-yard dogleg left opening par 4. While the water hazard (short-right) should be easily navigated, players must be wary of approach shots finishing long and left which will leave challenging approaches to this strongly sloped green.",
+        "danger": "Refer to the official hole description and on-site markers; no standalone public danger note is published.",
+        "greenNote": "Green contour details are included in the official hole description when provided.",
+        "strategy": "Use the official hole description for shape/position guidance; confirm exact carry numbers on-site.",
+        "teeYardages": {
+          "tips": 426,
+          "member": 379,
+          "forward": 243
+        },
+        "imageUrl": "/images/dmgcc/south/hole-01.jpg",
+        "mapImageUrl": null
+      },
+      {
+        "number": 2,
+        "par": 5,
+        "yardage": 605,
+        "handicap": 7,
+        "wind": "Public source does not publish a per-hole wind chart.",
+        "keyFeature": "The sharp dogleg left par 5 will certainly tempt the player to choose an aggressive line and negotiate the water hazard on their left and the bunkering through and on the right side of the fairway. Those who are successful will find themselves able to reach the green with their second shot. Expect lots of excitement here!",
+        "danger": "Refer to the official hole description and on-site markers; no standalone public danger note is published.",
+        "greenNote": "Green contour details are included in the official hole description when provided.",
+        "strategy": "Use the official hole description for shape/position guidance; confirm exact carry numbers on-site.",
+        "teeYardages": {
+          "tips": 605,
+          "member": 557,
+          "forward": 403
+        },
+        "imageUrl": "/images/dmgcc/south/hole-02.jpg",
+        "mapImageUrl": null
+      },
+      {
+        "number": 3,
+        "par": 4,
+        "yardage": 451,
+        "handicap": 9,
+        "wind": "Public source does not publish a per-hole wind chart.",
+        "keyFeature": "Players must negotiate the fairway bunkering, right and left, to position themselves for their second shot. The green is one of the most severe players will face and features one of Mr. Dye\u2019s \u201cinfamous\u201d false fronts.",
+        "danger": "Refer to the official hole description and on-site markers; no standalone public danger note is published.",
+        "greenNote": "Green contour details are included in the official hole description when provided.",
+        "strategy": "Use the official hole description for shape/position guidance; confirm exact carry numbers on-site.",
+        "teeYardages": {
+          "tips": 451,
+          "member": 413,
+          "forward": 320
+        },
+        "imageUrl": "/images/dmgcc/south/hole-03.jpg",
+        "mapImageUrl": null
+      },
+      {
+        "number": 4,
+        "par": 4,
+        "yardage": 475,
+        "handicap": 1,
+        "wind": "Public source does not publish a per-hole wind chart.",
+        "keyFeature": "One of the more challenging par 4\u2019s on property, the tee shot will need to find the fairway and avoid the strong bunker complex that sits hard off the right side of the fairway. From there a long demanding second shot must again carry to the well bunkered green or fall victim to another false front.",
+        "danger": "Refer to the official hole description and on-site markers; no standalone public danger note is published.",
+        "greenNote": "Green contour details are included in the official hole description when provided.",
+        "strategy": "Use the official hole description for shape/position guidance; confirm exact carry numbers on-site.",
+        "teeYardages": {
+          "tips": 475,
+          "member": 440,
+          "forward": 277
+        },
+        "imageUrl": "/images/dmgcc/south/hole-04.jpg",
+        "mapImageUrl": null
+      },
+      {
+        "number": 5,
+        "par": 3,
+        "yardage": 183,
+        "handicap": 15,
+        "wind": "Public source does not publish a per-hole wind chart.",
+        "keyFeature": "Average in length (160-170 yds.) this par 3 features a false front and a green with strong right to left contouring. Precision is required to hold the green and leave the players a realistic putt for birdie!",
+        "danger": "Refer to the official hole description and on-site markers; no standalone public danger note is published.",
+        "greenNote": "Green contour details are included in the official hole description when provided.",
+        "strategy": "Use the official hole description for shape/position guidance; confirm exact carry numbers on-site.",
+        "teeYardages": {
+          "tips": 183,
+          "member": 155,
+          "forward": 90
+        },
+        "imageUrl": "/images/dmgcc/south/hole-05.jpg",
+        "mapImageUrl": null
+      },
+      {
+        "number": 6,
+        "par": 5,
+        "yardage": 556,
+        "handicap": 11,
+        "wind": "Public source does not publish a per-hole wind chart.",
+        "keyFeature": "This par 5 typically plays downwind and if the players tee shot negotiates the fairway bunkers on the right the 550-yard hole should surrender plenty of birdies and an occasional eagle.",
+        "danger": "Refer to the official hole description and on-site markers; no standalone public danger note is published.",
+        "greenNote": "Green contour details are included in the official hole description when provided.",
+        "strategy": "Use the official hole description for shape/position guidance; confirm exact carry numbers on-site.",
+        "teeYardages": {
+          "tips": 556,
+          "member": 528,
+          "forward": 445
+        },
+        "imageUrl": "/images/dmgcc/south/hole-06.jpg",
+        "mapImageUrl": null
+      },
+      {
+        "number": 7,
+        "par": 4,
+        "yardage": 406,
+        "handicap": 5,
+        "wind": "Public source does not publish a per-hole wind chart.",
+        "keyFeature": "This 380-yard par 4 plays along the brow of a hill which requires the players tee shot to avoid the fairway bunkers down the right in order to gain a favorable angle into this small, well contoured green.",
+        "danger": "Refer to the official hole description and on-site markers; no standalone public danger note is published.",
+        "greenNote": "Green contour details are included in the official hole description when provided.",
+        "strategy": "Use the official hole description for shape/position guidance; confirm exact carry numbers on-site.",
+        "teeYardages": {
+          "tips": 406,
+          "member": 378,
+          "forward": 238
+        },
+        "imageUrl": "/images/dmgcc/south/hole-07.jpg",
+        "mapImageUrl": null
+      },
+      {
+        "number": 8,
+        "par": 3,
+        "yardage": 213,
+        "handicap": 17,
+        "wind": "Public source does not publish a per-hole wind chart.",
+        "keyFeature": "The par 3 eighth hole is the only uphill par 3 on either course. The uphill tee shot must skirt a bunker complex on the left and a pair of bunkers on the right.",
+        "danger": "Refer to the official hole description and on-site markers; no standalone public danger note is published.",
+        "greenNote": "Green contour details are included in the official hole description when provided.",
+        "strategy": "Use the official hole description for shape/position guidance; confirm exact carry numbers on-site.",
+        "teeYardages": {
+          "tips": 213,
+          "member": 172,
+          "forward": 133
+        },
+        "imageUrl": "/images/dmgcc/south/hole-08.jpg",
+        "mapImageUrl": null
+      },
+      {
+        "number": 9,
+        "par": 4,
+        "yardage": 442,
+        "handicap": 13,
+        "wind": "Public source does not publish a per-hole wind chart.",
+        "keyFeature": "The reimagined dogleg left par 4 gives the player room right off the tee, the bold will favor the left hand side and be rewarded with a more favorable line into the green which sits hard against the large water feature which hugs the left hand side of the fairway and green.",
+        "danger": "Refer to the official hole description and on-site markers; no standalone public danger note is published.",
+        "greenNote": "Green contour details are included in the official hole description when provided.",
+        "strategy": "Use the official hole description for shape/position guidance; confirm exact carry numbers on-site.",
+        "teeYardages": {
+          "tips": 442,
+          "member": 402,
+          "forward": 320
+        },
+        "imageUrl": "/images/dmgcc/south/hole-09.jpg",
+        "mapImageUrl": null
+      },
+      {
+        "number": 10,
+        "par": 4,
+        "yardage": 407,
+        "handicap": 14,
+        "wind": "Public source does not publish a per-hole wind chart.",
+        "keyFeature": "The prevailing wind off the right should help the player navigate the dogleg left par 4. A proper tee shot will leave the player a mid to short iron into this heavily contoured green which slopes strongly from middle to front with the back half of the green falling away from the player.",
+        "danger": "Refer to the official hole description and on-site markers; no standalone public danger note is published.",
+        "greenNote": "Green contour details are included in the official hole description when provided.",
+        "strategy": "Use the official hole description for shape/position guidance; confirm exact carry numbers on-site.",
+        "teeYardages": {
+          "tips": 407,
+          "member": 395,
+          "forward": 300
+        },
+        "imageUrl": "/images/dmgcc/south/hole-10.jpg",
+        "mapImageUrl": null
+      },
+      {
+        "number": 11,
+        "par": 4,
+        "yardage": 393,
+        "handicap": 10,
+        "wind": "Public source does not publish a per-hole wind chart.",
+        "keyFeature": "The slightly uphill, dogleg left par 4 tee plays along a brow of a hill asking the player to avoid the fairway bunkers up the left hand side to gain the best angle into this slightly off set green which falls slightly away from the player.",
+        "danger": "Refer to the official hole description and on-site markers; no standalone public danger note is published.",
+        "greenNote": "Green contour details are included in the official hole description when provided.",
+        "strategy": "Use the official hole description for shape/position guidance; confirm exact carry numbers on-site.",
+        "teeYardages": {
+          "tips": 393,
+          "member": 365,
+          "forward": 290
+        },
+        "imageUrl": "/images/dmgcc/south/hole-11.jpg",
+        "mapImageUrl": null
+      },
+      {
+        "number": 12,
+        "par": 4,
+        "yardage": 386,
+        "handicap": 4,
+        "wind": "Public source does not publish a per-hole wind chart.",
+        "keyFeature": "Players will want to favor left off the tee on this 360 yard par 4 and avoid the water hazard positioned to the right of the fairway. The players approach will generally be better off finishing below the hole on this smallish green.",
+        "danger": "Refer to the official hole description and on-site markers; no standalone public danger note is published.",
+        "greenNote": "Green contour details are included in the official hole description when provided. Source anomaly: one or more alternate tee yardages appear inconsistent on the official page and are left as TBD in this app.",
+        "strategy": "Use the official hole description for shape/position guidance; confirm exact carry numbers on-site.",
+        "teeYardages": {
+          "tips": 386,
+          "member": 358,
+          "forward": 0
+        },
+        "imageUrl": "/images/dmgcc/south/hole-12.jpg",
+        "mapImageUrl": null
+      },
+      {
+        "number": 13,
+        "par": 5,
+        "yardage": 520,
+        "handicap": 6,
+        "wind": "Public source does not publish a per-hole wind chart.",
+        "keyFeature": "Measuring in at just over 500 yards the longer hitters will be able to reach this par 5 in two shots. The more conventional strategy will leave the ball back in the 100 yard range and avoid the right hand cross-bunker. Another strongly contoured green will generally favor a ball to the right and below the hole.",
+        "danger": "Refer to the official hole description and on-site markers; no standalone public danger note is published.",
+        "greenNote": "Green contour details are included in the official hole description when provided.",
+        "strategy": "Use the official hole description for shape/position guidance; confirm exact carry numbers on-site.",
+        "teeYardages": {
+          "tips": 520,
+          "member": 504,
+          "forward": 422
+        },
+        "imageUrl": "/images/dmgcc/south/hole-13.jpg",
+        "mapImageUrl": null
+      },
+      {
+        "number": 14,
+        "par": 4,
+        "yardage": 446,
+        "handicap": 12,
+        "wind": "Public source does not publish a per-hole wind chart.",
+        "keyFeature": "This strong par 4 listed at 425 yards will require players to avoid the left hand fairway bunkers on their tee shot to set up a long second into a large sloping green.",
+        "danger": "Refer to the official hole description and on-site markers; no standalone public danger note is published.",
+        "greenNote": "Green contour details are included in the official hole description when provided.",
+        "strategy": "Use the official hole description for shape/position guidance; confirm exact carry numbers on-site.",
+        "teeYardages": {
+          "tips": 446,
+          "member": 425,
+          "forward": 309
+        },
+        "imageUrl": "/images/dmgcc/south/hole-14.jpg",
+        "mapImageUrl": null
+      },
+      {
+        "number": 15,
+        "par": 3,
+        "yardage": 233,
+        "handicap": 16,
+        "wind": "Public source does not publish a per-hole wind chart.",
+        "keyFeature": "The par 3 features a foreshortening bunker on the left hand side of the fairway creating the optical illusion the green sits directly behind the bunker. Don\u2019t be fooled and play the yardage to reach this back to front sloped putting surface.",
+        "danger": "Refer to the official hole description and on-site markers; no standalone public danger note is published.",
+        "greenNote": "Green contour details are included in the official hole description when provided.",
+        "strategy": "Use the official hole description for shape/position guidance; confirm exact carry numbers on-site.",
+        "teeYardages": {
+          "tips": 233,
+          "member": 178,
+          "forward": 128
+        },
+        "imageUrl": "/images/dmgcc/south/hole-15.jpg",
+        "mapImageUrl": null
+      },
+      {
+        "number": 16,
+        "par": 5,
+        "yardage": 555,
+        "handicap": 2,
+        "wind": "Public source does not publish a per-hole wind chart.",
+        "keyFeature": "This beautiful dogleg right par 5 will require players to favor the left-hand side of the fairway from the tee. Once in position players will need an accurate second shot to avoid fairway bunkers down the right side. Two well played shots will set up a short approach to this narrow, back to front sloped green.",
+        "danger": "Refer to the official hole description and on-site markers; no standalone public danger note is published.",
+        "greenNote": "Green contour details are included in the official hole description when provided.",
+        "strategy": "Use the official hole description for shape/position guidance; confirm exact carry numbers on-site.",
+        "teeYardages": {
+          "tips": 555,
+          "member": 526,
+          "forward": 404
+        },
+        "imageUrl": "/images/dmgcc/south/hole-16.jpg",
+        "mapImageUrl": null
+      },
+      {
+        "number": 17,
+        "par": 3,
+        "yardage": 198,
+        "handicap": 18,
+        "wind": "Public source does not publish a per-hole wind chart.",
+        "keyFeature": "With the prevailing wind typically behind the player this par 3 can play slightly shorter than the listed yardage. But beware, this narrow green slopes hard from right to left with the back half of the surface falling away from the player, typically the most challenging par 3 tee shot on either course.",
+        "danger": "Refer to the official hole description and on-site markers; no standalone public danger note is published.",
+        "greenNote": "Green contour details are included in the official hole description when provided.",
+        "strategy": "Use the official hole description for shape/position guidance; confirm exact carry numbers on-site.",
+        "teeYardages": {
+          "tips": 198,
+          "member": 176,
+          "forward": 102
+        },
+        "imageUrl": "/images/dmgcc/south/hole-17.jpg",
+        "mapImageUrl": null
+      },
+      {
+        "number": 18,
+        "par": 4,
+        "yardage": 452,
+        "handicap": 8,
+        "wind": "Public source does not publish a per-hole wind chart.",
+        "keyFeature": "The hard dogleg right par 4 finishing hole has 5 bunkers guarding the inside of the fairway making a tee shot up the left hand side critical to setting up the proper angle in to the green. Players who can keep their approach below and right of the hole will be rewarded on this large putting surface closing out the round.",
+        "danger": "Refer to the official hole description and on-site markers; no standalone public danger note is published.",
+        "greenNote": "Green contour details are included in the official hole description when provided.",
+        "strategy": "Use the official hole description for shape/position guidance; confirm exact carry numbers on-site.",
+        "teeYardages": {
+          "tips": 452,
+          "member": 403,
+          "forward": 326
+        },
+        "imageUrl": "/images/dmgcc/south/hole-18.jpg",
+        "mapImageUrl": null
+      }
+    ],
+    "imageUrl": "/images/dmgcc/overview/club-golf-banner.jpg",
+    "mapImageUrl": "/images/dmgcc/overview/club-golf-banner.jpg"
+  }
+]
