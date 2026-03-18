@@ -45,7 +45,27 @@ export type Course = {
   mapImageUrl?: string | null;
 };
 
-export const courses: Course[] = dmgccLocalCourses as Course[];
+const PUBLIC_BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+
+function withBasePath(url?: string | null): string | null {
+  if (!url) return null;
+  if (/^(https?:)?\/\//.test(url)) return url;
+  if (!PUBLIC_BASE_PATH) return url;
+  if (url.startsWith(`${PUBLIC_BASE_PATH}/`)) return url;
+
+  return url.startsWith("/") ? `${PUBLIC_BASE_PATH}${url}` : `${PUBLIC_BASE_PATH}/${url}`;
+}
+
+export const courses: Course[] = (dmgccLocalCourses as Course[]).map((course) => ({
+  ...course,
+  imageUrl: withBasePath(course.imageUrl),
+  mapImageUrl: withBasePath(course.mapImageUrl),
+  holes: course.holes.map((hole) => ({
+    ...hole,
+    imageUrl: withBasePath(hole.imageUrl),
+    mapImageUrl: withBasePath(hole.mapImageUrl),
+  })),
+}));
 
 const cmsCourseQuery = `*[_type == "course"] | order(name asc) {
   _id,
@@ -145,8 +165,8 @@ function normalizeHole(hole: SanityHole, index: number): Hole {
       member: hole.teeYardages?.member ?? Math.max(95, yardage - 28),
       forward: hole.teeYardages?.forward ?? Math.max(80, yardage - 63),
     },
-    imageUrl: urlForImage(hole.image),
-    mapImageUrl: urlForImage(hole.mapImage),
+    imageUrl: withBasePath(urlForImage(hole.image)),
+    mapImageUrl: withBasePath(urlForImage(hole.mapImage)),
   };
 }
 
@@ -178,8 +198,8 @@ function normalizeCourse(course: SanityCourse): Course | null {
     signaturePlan: course.signaturePlan ?? "",
     localTips: course.localTips ?? [],
     holes: normalizedHoles,
-    imageUrl: urlForImage(course.image),
-    mapImageUrl: urlForImage(course.mapImage),
+    imageUrl: withBasePath(urlForImage(course.image)),
+    mapImageUrl: withBasePath(urlForImage(course.mapImage)),
   };
 }
 
