@@ -29,8 +29,8 @@ export default async function CoursePage({ params }: { params: Promise<{ slug: s
             <ArrowLeft className="h-5 w-5" />
           </Link>
           <div>
-            <p className="text-xs uppercase tracking-widest text-[#556B5D]">{course.city}</p>
-            <h1 className="font-display text-xl font-semibold text-[#2F352F]">{course.name}</h1>
+            <p className="text-[13px] uppercase tracking-[0.14em] text-[#7B746C]">{course.city}</p>
+            <h1 className="font-display text-[30px] leading-tight font-semibold text-[#2F352F]">{course.name}</h1>
           </div>
         </div>
       </header>
@@ -55,19 +55,19 @@ export default async function CoursePage({ params }: { params: Promise<{ slug: s
 
           <div className="mt-4 grid grid-cols-2 gap-2 text-sm sm:grid-cols-4">
             <div className="rounded-2xl border border-[#D9DDD5] bg-[#FBF8F2] p-3">
-              <div className="text-[11px] uppercase tracking-wide text-[#7B746C]">Par</div>
+              <div className="text-[13px] uppercase tracking-[0.08em] text-[#7B746C]">Par</div>
               <div className="text-base font-semibold text-[#2F352F]">{course.par}</div>
             </div>
             <div className="rounded-2xl border border-[#D9DDD5] bg-[#FBF8F2] p-3">
-              <div className="text-[11px] uppercase tracking-wide text-[#7B746C]">Tips yardage</div>
+              <div className="text-[13px] uppercase tracking-[0.08em] text-[#7B746C]">Tips yardage</div>
               <div className="text-base font-semibold text-[#2F352F]">{course.yardage}</div>
             </div>
             <div className="rounded-2xl border border-[#D9DDD5] bg-[#FBF8F2] p-3">
-              <div className="text-[11px] uppercase tracking-wide text-[#7B746C]">Designer</div>
+              <div className="text-[13px] uppercase tracking-[0.08em] text-[#7B746C]">Designer</div>
               <div className="text-base font-semibold text-[#2F352F]">{course.designer}</div>
             </div>
             <div className="rounded-2xl border border-[#D9DDD5] bg-[#FBF8F2] p-3">
-              <div className="text-[11px] uppercase tracking-wide text-[#7B746C]">Rating / slope</div>
+              <div className="text-[13px] uppercase tracking-[0.08em] text-[#7B746C]">Rating / slope</div>
               <div className="text-base font-semibold text-[#2F352F]">
                 {metricValue(course.rating)} / {metricValue(course.slope)}
               </div>
@@ -94,7 +94,7 @@ export default async function CoursePage({ params }: { params: Promise<{ slug: s
           </div>
 
           <div className="mt-4 rounded-2xl border border-[#D9DDD5] border-l-4 border-l-[#C2A56A] bg-[#FBF8F2] p-4">
-            <h2 className="text-base font-semibold text-[#556B5D]">Local notes</h2>
+            <h2 className="font-display text-[22px] font-semibold text-[#556B5D]">Local notes</h2>
             <ul className="mt-2 space-y-2 text-sm leading-7 text-[#4B524B]">
               {course.localTips.map((tip) => (
                 <li key={tip} className="flex gap-2">
@@ -108,7 +108,7 @@ export default async function CoursePage({ params }: { params: Promise<{ slug: s
 
         <section className="rounded-[20px] border border-[#D9DDD5] bg-[#F7F3EC] p-4 shadow-[0_4px_14px_rgba(47,53,47,0.05)]">
           <div className="mb-3 flex flex-wrap items-center justify-between gap-3">
-            <h2 className="font-display text-2xl font-semibold text-[#2F352F]">Hole-by-hole playbook</h2>
+            <h2 className="font-display text-[22px] font-semibold text-[#2F352F]">Hole-by-hole playbook</h2>
             <Link
               href={`/course/${course.slug}/hole/1`}
               className="inline-flex items-center gap-1 rounded-2xl bg-[#556B5D] px-4 py-2 text-sm font-semibold text-[#F9F5EC] hover:opacity-95"
@@ -131,7 +131,7 @@ export default async function CoursePage({ params }: { params: Promise<{ slug: s
         </section>
 
         <section className="rounded-[20px] border border-[#D9DDD5] bg-[#F7F3EC] p-4 shadow-[0_4px_14px_rgba(47,53,47,0.05)]">
-          <h2 className="text-base font-semibold text-[#2F352F]">Address</h2>
+          <h2 className="font-display text-[22px] font-semibold text-[#2F352F]">Address</h2>
           <p className="mt-1 text-sm text-[#4B524B]">{course.address}</p>
           <div className="mt-3 flex flex-wrap items-center gap-4 text-xs text-[#4B524B]">
             <span className="inline-flex items-center gap-1">
