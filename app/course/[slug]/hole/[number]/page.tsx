@@ -65,14 +65,16 @@ export default async function HolePage({
       <main className="mx-auto w-full max-w-4xl space-y-4 px-4 pt-5">
         <section className="overflow-hidden rounded-[20px] border border-[#D9DDD5] border-l-4 border-l-[#C2A56A] bg-[#F7F3EC] p-5 shadow-[0_5px_16px_rgba(47,53,47,0.05)]">
           {heroImage ? (
-            <div className="-mx-5 -mt-5 mb-4 h-64 w-[calc(100%+2.5rem)] overflow-hidden border-b border-[#D9DDD5] bg-[#EEF2E9] sm:mx-0 sm:mt-0 sm:mb-5 sm:h-72 sm:w-full sm:rounded-[14px] sm:border">
-              <ZoomableImage
-                src={heroImage}
-                alt={`${course.name} hole ${hole.number} image`}
-                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 768px"
-                containerClassName="relative"
-                imageClassName="object-contain sm:object-cover"
-              />
+            <div className="-mx-5 -mt-5 mb-4 border-b border-[#E5E1D9] bg-white p-5 sm:mx-0 sm:mt-0 sm:mb-5 sm:rounded-[14px] sm:border sm:p-3">
+              <div className="h-64 w-full overflow-hidden rounded-[12px] border border-[#D9DDD5] bg-white sm:h-72">
+                <ZoomableImage
+                  src={heroImage}
+                  alt={`${course.name} hole ${hole.number} image`}
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 768px"
+                  containerClassName="relative"
+                  imageClassName="object-contain sm:object-cover"
+                />
+              </div>
             </div>
           ) : null}
 
