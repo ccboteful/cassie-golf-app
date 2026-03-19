@@ -51,30 +51,32 @@ export default async function CoursePage({ params }: { params: Promise<{ slug: s
         ) : null}
 
         <section className="rounded-[20px] border border-[#D9DDD5] bg-[#F7F3EC] p-4 shadow-[0_4px_14px_rgba(47,53,47,0.05)]">
-          <p className="text-sm leading-relaxed text-[#4B524B]">{course.summary}</p>
+          <p className="text-base leading-[1.6] text-[#4B524B]">{course.summary}</p>
 
-          <div className="mt-4 grid grid-cols-2 gap-2 text-sm sm:grid-cols-4">
-            <div className="rounded-2xl border border-[#D9DDD5] bg-[#FBF8F2] p-3">
+          <div className="mt-4 grid grid-cols-2 gap-2 text-sm">
+            <div className="rounded-2xl border border-[#D9DDD5] bg-[#FBF8F2] p-3.5">
               <div className="text-[13px] uppercase tracking-[0.08em] text-[#7B746C]">Par</div>
-              <div className="text-base font-semibold text-[#2F352F]">{course.par}</div>
+              <div className="mt-1 text-[22px] font-semibold leading-none text-[#2F352F]">{course.par}</div>
             </div>
-            <div className="rounded-2xl border border-[#D9DDD5] bg-[#FBF8F2] p-3">
-              <div className="text-[13px] uppercase tracking-[0.08em] text-[#7B746C]">Tips yardage</div>
-              <div className="text-base font-semibold text-[#2F352F]">{course.yardage}</div>
-            </div>
-            <div className="rounded-2xl border border-[#D9DDD5] bg-[#FBF8F2] p-3">
-              <div className="text-[13px] uppercase tracking-[0.08em] text-[#7B746C]">Designer</div>
-              <div className="text-base font-semibold text-[#2F352F]">{course.designer}</div>
-            </div>
-            <div className="rounded-2xl border border-[#D9DDD5] bg-[#FBF8F2] p-3">
+            <div className="rounded-2xl border border-[#D9DDD5] bg-[#FBF8F2] p-3.5">
               <div className="text-[13px] uppercase tracking-[0.08em] text-[#7B746C]">Rating / slope</div>
-              <div className="text-base font-semibold text-[#2F352F]">
+              <div className="mt-1 text-[22px] font-semibold leading-none text-[#2F352F]">
                 {metricValue(course.rating)} / {metricValue(course.slope)}
+              </div>
+            </div>
+            <div className="rounded-2xl border border-[#D9DDD5] bg-[#FBF8F2] p-3.5">
+              <div className="text-[13px] uppercase tracking-[0.08em] text-[#7B746C]">Tips yardage</div>
+              <div className="mt-1 text-[22px] font-semibold leading-none text-[#2F352F]">{course.yardage}</div>
+            </div>
+            <div className="rounded-2xl border border-[#D9DDD5] bg-[#FBF8F2] p-3.5">
+              <div className="text-[13px] uppercase tracking-[0.08em] text-[#7B746C]">Built</div>
+              <div className="mt-1 text-[22px] font-semibold leading-none text-[#2F352F]">
+                {metricValue(course.yearBuilt)}
               </div>
             </div>
           </div>
 
-          <div className="mt-4 grid gap-2 text-sm text-[#4B524B] sm:grid-cols-2">
+          <div className="mt-4 grid gap-2 text-base text-[#4B524B] sm:grid-cols-2">
             <p className="flex items-start gap-2 rounded-xl border border-[#D9DDD5] bg-[#FBF8F2] p-3">
               <Route className="mt-0.5 h-4 w-4 text-[#556B5D]" />
               {course.signaturePlan}
@@ -93,12 +95,12 @@ export default async function CoursePage({ params }: { params: Promise<{ slug: s
             </p>
           </div>
 
-          <div className="mt-4 rounded-2xl border border-[#D9DDD5] border-l-4 border-l-[#C2A56A] bg-[#FBF8F2] p-4">
+          <div className="mt-4 rounded-2xl border border-[#D9DDD5] border-l-4 border-l-[#C2A56A] bg-[#F7F3EC] p-4">
             <h2 className="font-display text-[22px] font-semibold text-[#556B5D]">Local notes</h2>
-            <ul className="mt-2 space-y-2 text-sm leading-7 text-[#4B524B]">
+            <ul className="mt-2 space-y-2 text-base leading-[1.6] text-[#4B524B]">
               {course.localTips.map((tip) => (
                 <li key={tip} className="flex gap-2">
-                  <span className="mt-[11px] h-1.5 w-1.5 rounded-full bg-[#C2A56A]" />
+                  <span className="mt-[10px] h-1.5 w-1.5 rounded-full bg-[#C2A56A]" />
                   <span>{tip}</span>
                 </li>
               ))}
@@ -122,9 +124,9 @@ export default async function CoursePage({ params }: { params: Promise<{ slug: s
               <Link
                 key={hole.number}
                 href={`/course/${course.slug}/hole/${hole.number}`}
-                className="flex min-h-10 items-center justify-center rounded-full bg-[#E8EEE7] px-3 text-sm font-semibold text-[#2F352F] transition hover:bg-[#dce6db]"
+                className="flex min-h-10 items-center justify-center rounded-full border border-[#D9DDD5] bg-[#E8EEE7] px-3 text-sm font-semibold text-[#2F352F] transition hover:bg-[#dce6db]"
               >
-                Hole {hole.number}
+                {hole.number}
               </Link>
             ))}
           </div>
@@ -132,8 +134,8 @@ export default async function CoursePage({ params }: { params: Promise<{ slug: s
 
         <section className="rounded-[20px] border border-[#D9DDD5] bg-[#F7F3EC] p-4 shadow-[0_4px_14px_rgba(47,53,47,0.05)]">
           <h2 className="font-display text-[22px] font-semibold text-[#2F352F]">Address</h2>
-          <p className="mt-1 text-sm text-[#4B524B]">{course.address}</p>
-          <div className="mt-3 flex flex-wrap items-center gap-4 text-xs text-[#4B524B]">
+          <p className="mt-1 text-base text-[#4B524B]">{course.address}</p>
+          <div className="mt-3 flex flex-wrap items-center gap-4 text-[13px] text-[#4B524B]">
             <span className="inline-flex items-center gap-1">
               <CircleGauge className="h-3.5 w-3.5 text-[#556B5D]" /> Designer: {course.designer}
             </span>

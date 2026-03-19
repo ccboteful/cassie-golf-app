@@ -42,7 +42,6 @@ export default async function HolePage({
 
   const neighbors = getHoleNeighbors(hole.number, course.holes.length);
   const heroImage = hole.imageUrl || course.imageUrl;
-  const windIsSparse = isSparseNote(hole.wind);
   const dangerIsSparse = isSparseNote(hole.danger);
 
   return (
@@ -89,13 +88,26 @@ export default async function HolePage({
             </span>
           </div>
 
-          <h2 className="font-display text-[22px] font-semibold text-[#2F352F]">What this hole asks</h2>
-          <p className="mt-3 text-base leading-[1.6] text-[#4B524B]">{hole.keyFeature}</p>
-
-          <article className="mt-5 rounded-2xl border border-[#D9DDD5] bg-[#FBF8F2] p-4">
-            <h3 className="text-[18px] font-semibold text-[#2F352F]">Strategy</h3>
-            <p className="mt-2 text-base leading-[1.6] text-[#4B524B]">{hole.strategy}</p>
+          <article className="rounded-2xl border border-[#D9DDD5] border-l-4 border-l-[#C2A56A] bg-[#F7F3EC] p-5">
+            <h2 className="font-display text-[22px] font-semibold text-[#2F352F]">What this hole asks</h2>
+            <p className="mt-3 text-base leading-[1.6] text-[#4B524B]">{hole.keyFeature}</p>
           </article>
+
+          <div className="mt-4 grid gap-2 sm:grid-cols-2">
+            <article className="rounded-2xl border border-[#D9DDD5] bg-[#FBF8F2] p-4">
+              <h3 className="font-display text-[18px] font-semibold text-[#2F352F]">Strategy</h3>
+              <p className="mt-2 text-base leading-[1.6] text-[#4B524B]">{hole.strategy}</p>
+            </article>
+
+            <article className="rounded-2xl border border-[#D9DDD5] bg-[#FBF8F2] p-4">
+              <h3 className="font-display text-[18px] font-semibold text-[#2F352F]">Danger to avoid</h3>
+              <p className="mt-2 text-base leading-[1.6] text-[#4B524B]">
+                {dangerIsSparse
+                  ? "No specific danger note is available yet. Default to the safer line and favor center-green outcomes."
+                  : hole.danger}
+              </p>
+            </article>
+          </div>
         </section>
 
         <section className="rounded-[20px] border border-[#D9DDD5] bg-[#F7F3EC] p-4 shadow-[0_4px_14px_rgba(47,53,47,0.05)]">
@@ -113,10 +125,10 @@ export default async function HolePage({
 
             <article className="min-w-[240px] snap-start rounded-2xl border border-[#D9DDD5] bg-[#FBF8F2] p-4 shadow-[0_2px_8px_rgba(47,53,47,0.06)] md:min-w-0">
               <div className="inline-flex items-center gap-1 text-[13px] uppercase tracking-[0.08em] text-[#7B746C]">
-                <Target className="h-3.5 w-3.5 text-[#556B5D]" /> Smart miss
+                <Wind className="h-3.5 w-3.5 text-[#556B5D]" /> Wind cue
               </div>
               <p className="mt-2 text-base leading-[1.6] text-[#4B524B]">
-                If in doubt, play to the fattest section and keep the next putt uphill.
+                {hasMeaningfulText(hole.wind) ? hole.wind : <span className="text-[#7B746C]">No wind cue available.</span>}
               </p>
             </article>
 
@@ -131,65 +143,29 @@ export default async function HolePage({
 
             <article className="min-w-[240px] snap-start rounded-2xl border border-[#D9DDD5] bg-[#FBF8F2] p-4 shadow-[0_2px_8px_rgba(47,53,47,0.06)] md:min-w-0">
               <div className="inline-flex items-center gap-1 text-[13px] uppercase tracking-[0.08em] text-[#7B746C]">
-                <Wind className="h-3.5 w-3.5 text-[#556B5D]" /> Wind cue
+                <Target className="h-3.5 w-3.5 text-[#556B5D]" /> Smart miss
               </div>
               <p className="mt-2 text-base leading-[1.6] text-[#4B524B]">
-                {hasMeaningfulText(hole.wind) ? hole.wind : <span className="text-[#7B746C]">No wind cue available.</span>}
+                If in doubt, play to the fattest section and keep the next putt uphill.
               </p>
             </article>
           </div>
         </section>
 
-        <section className="rounded-[20px] border border-[#D9DDD5] bg-[#F7F3EC] p-4 shadow-[0_4px_14px_rgba(47,53,47,0.05)]">
-          <h2 className="font-display text-[22px] font-semibold text-[#2F352F]">Notes</h2>
-          <div className="mt-3 space-y-2">
-            {dangerIsSparse ? (
-              <details className="rounded-xl border border-[#D9DDD5] bg-[#FBF8F2] p-3">
-                <summary className="cursor-pointer list-none text-[13px] uppercase tracking-[0.08em] text-[#7B746C]">
-                  Danger to avoid
-                </summary>
-                <p className="mt-2 text-sm leading-6 text-[#7B746C]">
-                  {hasMeaningfulText(hole.danger)
-                    ? hole.danger
-                    : "No specific danger note is available yet. Default to the safer line."}
-                </p>
-              </details>
-            ) : (
-              <div className="rounded-xl border border-[#D9DDD5] bg-[#FBF8F2] px-3 py-2.5 text-sm text-[#4B524B]">
-                <span className="mr-2 text-[13px] uppercase tracking-[0.08em] text-[#7B746C]">Danger to avoid</span>
-                {hole.danger}
-              </div>
-            )}
-
-            {windIsSparse ? (
-              <details className="rounded-xl border border-[#D9DDD5] bg-[#FBF8F2] p-3">
-                <summary className="cursor-pointer list-none text-[13px] uppercase tracking-[0.08em] text-[#7B746C]">Wind cue</summary>
-                <p className="mt-2 text-sm leading-6 text-[#7B746C]">
-                  {hasMeaningfulText(hole.wind)
-                    ? hole.wind
-                    : "Wind note is currently sparse. Commit to your pre-shot routine and club-up/down conservatively."}
-                </p>
-              </details>
-            ) : (
-              <div className="rounded-xl border border-[#D9DDD5] bg-[#FBF8F2] px-3 py-2.5 text-sm text-[#4B524B]">
-                <span className="mr-2 text-[13px] uppercase tracking-[0.08em] text-[#7B746C]">Wind cue</span>
-                {hole.wind}
-              </div>
-            )}
-          </div>
-        </section>
-
-        <section className="rounded-[20px] border border-[#D9DDD5] bg-[#F7F3EC] p-4 shadow-[0_4px_14px_rgba(47,53,47,0.05)]">
+        <section
+          id="hole-jump"
+          className="rounded-[20px] border border-[#D9DDD5] bg-[#F7F3EC] p-4 shadow-[0_4px_14px_rgba(47,53,47,0.05)]"
+        >
           <h2 className="font-display text-[22px] font-semibold text-[#2F352F]">Quick jump</h2>
           <div className="mt-2 grid grid-cols-6 gap-2">
             {course.holes.map((item) => (
               <Link
                 key={item.number}
                 href={`/course/${course.slug}/hole/${item.number}`}
-                className={`flex min-h-10 items-center justify-center rounded-full px-2 text-sm font-semibold transition ${
+                className={`flex min-h-10 items-center justify-center rounded-full border px-2 text-sm font-semibold transition ${
                   item.number === hole.number
-                    ? "bg-[#556B5D] text-[#F9F5EC]"
-                    : "bg-[#E8EEE7] text-[#2F352F] hover:bg-[#dce6db]"
+                    ? "border-[#556B5D] bg-[#556B5D] text-[#F9F5EC]"
+                    : "border-[#D9DDD5] bg-[#E8EEE7] text-[#2F352F] hover:bg-[#dce6db]"
                 }`}
               >
                 {item.number}
@@ -208,21 +184,15 @@ export default async function HolePage({
             <ArrowLeft className="h-4 w-4" /> Prev
           </Link>
 
-          <div className="flex gap-2 overflow-x-auto px-1 py-1">
-            {course.holes.map((item) => (
-              <Link
-                key={item.number}
-                href={`/course/${course.slug}/hole/${item.number}`}
-                className={`inline-flex min-h-9 min-w-9 shrink-0 items-center justify-center rounded-full border px-3 text-sm font-semibold ${
-                  item.number === hole.number
-                    ? "border-[#556B5D] bg-[#556B5D] text-[#F9F5EC]"
-                    : "border-[#D9DDD5] bg-[#FBF8F2] text-[#2F352F]"
-                }`}
-              >
-                {item.number}
-              </Link>
-            ))}
-          </div>
+          <Link
+            href="#hole-jump"
+            className="inline-flex items-center justify-center gap-2 rounded-2xl border border-[#D9DDD5] bg-[#FBF8F2] px-3 py-2.5 text-sm font-semibold text-[#2F352F]"
+          >
+            <span className="inline-flex min-h-7 min-w-7 items-center justify-center rounded-full bg-[#556B5D] px-2 text-[13px] font-semibold text-[#F9F5EC]">
+              {hole.number}
+            </span>
+            Quick jump
+          </Link>
 
           <Link
             href={`/course/${course.slug}/hole/${neighbors.next}`}
