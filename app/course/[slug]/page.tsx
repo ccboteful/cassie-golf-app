@@ -1,7 +1,7 @@
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowRight, CircleGauge, Clock3, Flag, Route, Trees, Trophy, Waves } from "lucide-react";
-import ZoomableImage from "@/components/ZoomableImage";
 import { getAllCourses, getCourseBySlug } from "@/lib/courses";
 
 export async function generateStaticParams() {
@@ -38,13 +38,13 @@ export default async function CoursePage({ params }: { params: Promise<{ slug: s
       <main className="mx-auto w-full max-w-4xl space-y-4 px-4 pt-5">
         {course.imageUrl ? (
           <section className="overflow-hidden rounded-[20px] border border-[#D9DDD5] bg-[#F7F3EC] shadow-[0_4px_14px_rgba(47,53,47,0.05)]">
-            <div className="h-56 w-full sm:h-72">
-              <ZoomableImage
+            <div className="relative h-56 w-full sm:h-72">
+              <Image
                 src={course.imageUrl}
                 alt={`${course.name} overview image`}
+                fill
+                className="object-cover"
                 sizes="(max-width: 768px) 100vw, 768px"
-                containerClassName="relative"
-                imageClassName="object-cover"
               />
             </div>
           </section>
