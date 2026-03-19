@@ -1,5 +1,12 @@
-import { RegionCoursesPage } from "@/components/RegionCoursesPage";
+import { redirect } from "next/navigation";
+import { getCoursesByRegion } from "@/lib/courses";
 
-export default function SouthPage() {
-  return <RegionCoursesPage region="south" />;
+export default async function SouthPage() {
+  const [course] = await getCoursesByRegion("south");
+
+  if (course) {
+    redirect(`/course/${course.slug}`);
+  }
+
+  redirect("/");
 }

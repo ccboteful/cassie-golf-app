@@ -1,5 +1,12 @@
-import { RegionCoursesPage } from "@/components/RegionCoursesPage";
+import { redirect } from "next/navigation";
+import { getCoursesByRegion } from "@/lib/courses";
 
-export default function NorthPage() {
-  return <RegionCoursesPage region="north" />;
+export default async function NorthPage() {
+  const [course] = await getCoursesByRegion("north");
+
+  if (course) {
+    redirect(`/course/${course.slug}`);
+  }
+
+  redirect("/");
 }

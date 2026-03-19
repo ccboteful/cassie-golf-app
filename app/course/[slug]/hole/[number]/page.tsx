@@ -66,12 +66,12 @@ export default async function HolePage({
       <main className="mx-auto w-full max-w-4xl space-y-4 px-4 pt-5">
         <section className="overflow-hidden rounded-[20px] border border-[#D9DDD5] border-l-4 border-l-[#C2A56A] bg-[#F7F3EC] p-5 shadow-[0_5px_16px_rgba(47,53,47,0.05)]">
           {heroImage ? (
-            <div className="relative mb-5 h-56 w-full overflow-hidden rounded-[20px] border border-[#D9DDD5] bg-[#EFF3EC] sm:h-72">
+            <div className="relative mb-5 h-56 w-full overflow-hidden rounded-[20px] border border-[#D9DDD5] bg-gradient-to-b from-[#EDF2EA] to-[#F5F1E9] p-1.5 sm:h-72 sm:p-0">
               <Image
                 src={heroImage}
                 alt={`${course.name} hole ${hole.number} image`}
                 fill
-                className="object-cover"
+                className="rounded-[16px] object-contain sm:rounded-none sm:object-cover"
                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 768px"
               />
             </div>

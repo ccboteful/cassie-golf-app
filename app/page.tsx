@@ -12,14 +12,14 @@ export default async function HomePage() {
   const regionCards = [
     {
       key: "north",
-      href: "/north",
+      href: northPreview ? `/course/${northPreview.slug}` : "/north",
       title: "North Course",
       descriptor: "Tree-lined strategy with classic Midwest shaping.",
       imageUrl: northPreview?.imageUrl,
     },
     {
       key: "south",
-      href: "/south",
+      href: southPreview ? `/course/${southPreview.slug}` : "/south",
       title: "South Course",
       descriptor: "A bolder routing with exposure to wind and longer asks.",
       imageUrl: southPreview?.imageUrl,
