@@ -7,19 +7,24 @@ export type Hole = {
   number: number;
   par: number;
   yardage: number;
-  handicap: number;
+  handicap: number; // Men's stroke index
+  ladiesHandicap?: number; // Ladies stroke index
+  scoringHandicap?: number; // Scoring tee stroke index
   wind: string;
   keyFeature: string;
   danger: string;
   greenNote: string;
   strategy: string;
   teeYardages: {
-    tips: number;
-    member: number;
-    forward: number;
+    black: number;
+    green: number;
+    blue: number;
+    bronze: number;
+    red?: number;
   };
   imageUrl?: string | null;
   mapImageUrl?: string | null;
+  satelliteImageUrl?: string | null;
 };
 
 export type Course = {
@@ -64,6 +69,7 @@ export const courses: Course[] = (dmgccLocalCourses as Course[]).map((course) =>
     ...hole,
     imageUrl: withBasePath(hole.imageUrl),
     mapImageUrl: withBasePath(hole.mapImageUrl),
+    satelliteImageUrl: withBasePath((hole as Hole).satelliteImageUrl),
   })),
 }));
 
@@ -97,6 +103,8 @@ const cmsCourseQuery = `*[_type == "course"] | order(name asc) {
     par,
     yardage,
     handicap,
+    ladiesHandicap,
+    scoringHandicap,
     wind,
     keyFeature,
     danger,
@@ -104,7 +112,8 @@ const cmsCourseQuery = `*[_type == "course"] | order(name asc) {
     strategy,
     teeYardages,
     image,
-    mapImage
+    mapImage,
+    satelliteImage
   }
 }`;
 
@@ -113,14 +122,17 @@ type SanityHole = {
   par?: number;
   yardage?: number;
   handicap?: number;
+  ladiesHandicap?: number;
+  scoringHandicap?: number;
   wind?: string;
   keyFeature?: string;
   danger?: string;
   greenNote?: string;
   strategy?: string;
-  teeYardages?: { tips?: number; member?: number; forward?: number };
+  teeYardages?: { black?: number; green?: number; blue?: number; bronze?: number; red?: number };
   image?: unknown;
   mapImage?: unknown;
+  satelliteImage?: unknown;
 };
 
 type SanityCourse = {
@@ -155,18 +167,23 @@ function normalizeHole(hole: SanityHole, index: number): Hole {
     par: hole.par ?? 4,
     yardage,
     handicap: hole.handicap ?? Math.min(number, 18),
+    ladiesHandicap: hole.ladiesHandicap,
+    scoringHandicap: hole.scoringHandicap ?? hole.ladiesHandicap,
     wind: hole.wind ?? "",
     keyFeature: hole.keyFeature ?? "",
     danger: hole.danger ?? "",
     greenNote: hole.greenNote ?? "",
     strategy: hole.strategy ?? "",
     teeYardages: {
-      tips: hole.teeYardages?.tips ?? yardage,
-      member: hole.teeYardages?.member ?? Math.max(95, yardage - 28),
-      forward: hole.teeYardages?.forward ?? Math.max(80, yardage - 63),
+      black: hole.teeYardages?.black ?? yardage,
+      green: hole.teeYardages?.green ?? Math.max(95, yardage - 28),
+      blue: hole.teeYardages?.blue ?? Math.max(88, yardage - 46),
+      bronze: hole.teeYardages?.bronze ?? Math.max(80, yardage - 63),
+      red: hole.teeYardages?.red,
     },
     imageUrl: withBasePath(urlForImage(hole.image)),
     mapImageUrl: withBasePath(urlForImage(hole.mapImage)),
+    satelliteImageUrl: withBasePath(urlForImage(hole.satelliteImage)),
   };
 }
 

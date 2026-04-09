@@ -1,13 +1,16 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Flag, Sparkles, Wind } from "lucide-react";
+import { ArrowRight, Flag, Sparkles, Wind, Sun, CloudRain, Thermometer } from "lucide-react";
 import { getAllCourses } from "@/lib/courses";
+import { getGolfWeather } from "@/lib/weather";
 
 export default async function HomePage() {
   const courses = await getAllCourses();
+  const weather = await getGolfWeather();
 
   const northPreview = courses.find((course) => course.region === "north");
   const southPreview = courses.find((course) => course.region === "south");
+  const heroImage = northPreview?.imageUrl ?? southPreview?.imageUrl;
 
   const regionCards = [
     {
@@ -31,67 +34,92 @@ export default async function HomePage() {
   return (
     <div className="min-h-screen bg-[#FBF8F2]">
       <main className="mx-auto w-full max-w-5xl px-4 pb-20 pt-8 sm:pt-10">
-        <section className="rounded-[24px] border border-[#D9DDD5] bg-[#F7F3EC] px-5 py-6 shadow-[0_8px_26px_rgba(47,53,47,0.06)] sm:px-8 sm:py-9">
-          <div className="inline-flex items-center gap-1 rounded-full border border-[#D9DDD5] bg-[#FBF8F2] px-3 py-1 text-[13px] font-semibold text-[#556B5D]">
-            <Flag className="h-3.5 w-3.5" /> Cassie Club Guide
-          </div>
+        <section className="relative overflow-hidden rounded-[26px] border border-[#D6DACE] bg-[#F3EFE7] px-5 py-7 shadow-[0_12px_28px_rgba(20,28,38,0.11)] sm:px-9 sm:py-10">
+          {heroImage ? (
+            <>
+              <Image
+                src={heroImage}
+                alt="DMGCC hero"
+                fill
+                className="object-cover opacity-[0.22]"
+                sizes="(max-width: 1024px) 100vw, 960px"
+                priority
+              />
+              <div className="absolute inset-0 bg-gradient-to-r from-[rgba(28,42,30,0.60)] via-[rgba(28,42,30,0.40)] to-[rgba(243,239,231,0.58)]" />
+            </>
+          ) : null}
 
-          <h1 className="mt-5 max-w-3xl font-display text-[30px] font-semibold leading-[1.2] text-[#2F352F] sm:text-[34px]">
-            Editorial course intelligence for sharper rounds at DMGCC.
-          </h1>
+          <div className="relative z-10">
+            <div className="inline-flex items-center gap-1 rounded-full border border-[#C8A24A] bg-[#F0E4BE] px-3 py-1 text-[13px] font-semibold text-[#7A6020] backdrop-blur">
+              <Flag className="h-3.5 w-3.5" /> Cassie Club Guide
+            </div>
 
-          <p className="mt-4 max-w-2xl text-base leading-[1.6] text-[#4B524B]">
-            Pick North or South and jump straight into the full playbook. Every hole is organized
-            around the decision that matters most: where to start it, what to avoid, and the miss
-            that still leaves you scoring.
-          </p>
+            <h1 className="mt-5 max-w-3xl font-display text-[38px] font-bold leading-[1.14] text-[#FBF8F2] sm:text-[48px]">
+              Editorial course intelligence for sharper rounds at DMGCC.
+            </h1>
 
-          <div className="mt-6 flex flex-wrap gap-2.5">
-            <span className="inline-flex items-center rounded-full border border-[#D9DDD5] bg-[#FBF8F2] px-3.5 py-1.5 text-[13px] font-medium text-[#2F352F]">
-              {courses.length} DMGCC courses
-            </span>
-            <span className="inline-flex items-center rounded-full border border-[#D9DDD5] bg-[#FBF8F2] px-3.5 py-1.5 text-[13px] font-medium text-[#2F352F]">
-              {courses.length * 18} hole briefs
-            </span>
-            <span className="inline-flex items-center rounded-full border border-[#D9DDD5] bg-[#FBF8F2] px-3.5 py-1.5 text-[13px] font-medium text-[#2F352F]">
-              Mobile-first UI
-            </span>
+            <p className="mt-4 max-w-2xl text-[16px] leading-[1.65] text-[#F1EEE7] sm:text-[17px]">
+              Pick North or South and jump straight into the full playbook. Every hole is organized
+              around the decision that matters most: where to start it, what to avoid, and the miss
+              that still leaves you scoring.
+            </p>
+
+            <div className="mt-6 flex flex-wrap gap-2.5">
+              <span className="inline-flex items-center rounded-full border border-[#D6DACE] bg-[rgba(251,248,242,0.92)] px-3.5 py-1.5 text-[13px] font-medium text-[#2A302A]">
+                {courses.length} DMGCC courses
+              </span>
+              <span className="inline-flex items-center rounded-full border border-[#D6DACE] bg-[rgba(251,248,242,0.92)] px-3.5 py-1.5 text-[13px] font-medium text-[#2A302A]">
+                {courses.length * 18} hole briefs
+              </span>
+              <span className="inline-flex items-center rounded-full border border-[#D6DACE] bg-[rgba(251,248,242,0.92)] px-3.5 py-1.5 text-[13px] font-medium text-[#2A302A]">
+                Mobile-first UI
+              </span>
+            </div>
           </div>
         </section>
 
-        <section className="mt-7 grid gap-4 sm:grid-cols-2">
+        <section className="mt-7 grid gap-5 sm:grid-cols-2">
           {regionCards.map((region) => (
             <Link
               key={region.key}
               href={region.href}
-              className="group overflow-hidden rounded-[22px] border border-[#D9DDD5] bg-[#F7F3EC] shadow-[0_8px_26px_rgba(47,53,47,0.06)] transition-all hover:-translate-y-0.5 hover:shadow-[0_14px_28px_rgba(47,53,47,0.09)]"
+              className="group overflow-hidden rounded-[24px] border border-[#D4D9CF] bg-[#F7F3EC] shadow-[0_12px_28px_rgba(20,28,38,0.1)] transition-all hover:-translate-y-1 hover:shadow-[0_16px_32px_rgba(20,28,38,0.15)]"
             >
               {region.imageUrl ? (
-                <div className="relative h-52 w-full overflow-hidden sm:h-60">
+                <div className="relative h-60 w-full overflow-hidden sm:h-64">
                   <Image
                     src={region.imageUrl}
                     alt={`${region.title} hero image`}
                     fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                    className="object-cover transition-transform duration-500 group-hover:scale-[1.04]"
                     sizes="(max-width: 768px) 100vw, 50vw"
                   />
-                  <span className="absolute left-4 top-4 rounded-full bg-[rgba(247,243,236,0.94)] px-3 py-1 text-[13px] font-semibold text-[#556B5D] shadow-sm backdrop-blur">
+                  <div className="absolute inset-0 bg-gradient-to-t from-[rgba(28,42,30,0.72)] via-[rgba(28,42,30,0.3)] to-transparent" />
+                  <span className="absolute left-4 top-4 rounded-full border border-[#C8A24A] bg-[#F0E4BE] px-3 py-1 text-[12px] font-semibold uppercase tracking-[0.1em] text-[#7A6020] shadow-sm backdrop-blur">
                     {region.label}
                   </span>
                 </div>
               ) : (
-                <div className="h-52 w-full bg-gradient-to-br from-[#DDE5DA] to-[#EFF3EC] sm:h-60" />
+                <div className="h-60 w-full bg-gradient-to-br from-[#DDE5DA] to-[#EFF3EC] sm:h-64" />
               )}
 
-              <div className="p-5 sm:p-6">
-                <h2 className="font-display text-[22px] font-semibold text-[#2F352F]">{region.title}</h2>
-                <p className="mt-2 text-base leading-[1.6] text-[#4B524B]">{region.descriptor}</p>
-                <span className="mt-5 inline-flex items-center gap-1 rounded-2xl bg-[#556B5D] px-4 py-2.5 text-sm font-semibold text-[#FBF8F2] transition-all group-hover:gap-2">
+              <div className="p-6 sm:p-7">
+                <h2 className="font-display text-[28px] font-bold text-[#2A302A]">{region.title}</h2>
+                <p className="mt-2 text-[16px] leading-[1.7] text-[#52514A]">{region.descriptor}</p>
+                <span className="mt-6 inline-flex items-center gap-1 rounded-2xl border border-[#2C3A2E] bg-[#2C3A2E] px-4 py-2.5 text-sm font-semibold text-[#FDFAF4] transition-all group-hover:gap-2 group-hover:bg-[#3D5449]">
                   Explore Course <ArrowRight className="h-4 w-4" />
                 </span>
               </div>
             </Link>
           ))}
+        </section>
+
+        <section className="mt-7 rounded-[20px] border border-[#D9DDD5] bg-[#F7F3EC] p-5 shadow-[0_4px_14px_rgba(47,53,47,0.05)]">
+          <h2 className="font-display text-[24px] font-semibold text-[#2A302A]">What is stroke index?</h2>
+          <p className="mt-2 text-base leading-[1.7] text-[#52514A]">
+            Stroke Index ranks hole difficulty within a course: <span className="font-semibold">1 is hardest</span>,
+            <span className="font-semibold"> 18 is easiest</span>. Men&rsquo;s, Ladies&rsquo;, and Scoring Tee indexes can differ.
+          </p>
         </section>
 
         <section className="mt-7 flex flex-wrap gap-2">
@@ -105,6 +133,60 @@ export default async function HomePage() {
             <Flag className="h-3.5 w-3.5 text-[#556B5D]" /> Fast hole jump
           </span>
         </section>
+
+        {weather && (
+          <section className="mt-7 rounded-[20px] border border-[#D9DDD5] bg-[#F7F3EC] p-5 shadow-[0_4px_14px_rgba(47,53,47,0.05)]">
+            <div className="flex items-center justify-between">
+              <h2 className="font-display text-[24px] font-semibold text-[#2A302A]">
+                {weather.current.emoji} Today&rsquo;s Golf Weather
+              </h2>
+              <span className="text-[13px] text-[#52514A]">{weather.date}</span>
+            </div>
+
+            <div className="mt-4 grid gap-3 sm:grid-cols-4">
+              <div className="rounded-2xl border border-[#D6DACE] bg-[#FBF8F2] px-4 py-3 text-center">
+                <div className="text-[28px] font-bold text-[#2A302A]">{weather.current.temp}°F</div>
+                <div className="text-[13px] text-[#52514A]">Feels {weather.current.feelsLike}°F</div>
+              </div>
+              <div className="rounded-2xl border border-[#D6DACE] bg-[#FBF8F2] px-4 py-3 text-center">
+                <div className="text-[16px] font-semibold text-[#2A302A]">{weather.current.condition}</div>
+                <div className="text-[13px] text-[#52514A]">H: {weather.high}° / L: {weather.low}°</div>
+              </div>
+              <div className="rounded-2xl border border-[#D6DACE] bg-[#FBF8F2] px-4 py-3 text-center">
+                <div className="text-[16px] font-semibold text-[#2A302A]">{weather.current.wind} mph</div>
+                <div className="text-[13px] text-[#52514A]">Wind</div>
+              </div>
+              <div className="rounded-2xl border border-[#D6DACE] bg-[#FBF8F2] px-4 py-3 text-center">
+                <div className="text-[13px] text-[#52514A]">☀️ {weather.sunrise}</div>
+                <div className="text-[13px] text-[#52514A]">🌅 {weather.sunset}</div>
+              </div>
+            </div>
+
+            <div className="mt-4">
+              <h3 className="mb-2 text-[14px] font-semibold text-[#2A302A]">Tee Time Forecast</h3>
+              <div className="grid grid-cols-4 gap-1.5 sm:grid-cols-7">
+                {weather.golfHours
+                  .filter((h) => h.hour >= 7 && h.hour <= 18)
+                  .map((h) => (
+                    <div
+                      key={h.hour}
+                      className="rounded-xl border border-[#D6DACE] bg-[#FBF8F2] px-2 py-2 text-center"
+                    >
+                      <div className="text-[12px] font-medium text-[#52514A]">
+                        {h.hour > 12 ? h.hour - 12 + "p" : h.hour + "a"}
+                      </div>
+                      <div className="text-[14px]">{h.emoji}</div>
+                      <div className="text-[14px] font-semibold text-[#2A302A]">{h.temp}°</div>
+                      <div className="text-[11px] text-[#52514A]">{h.wind}mph</div>
+                      {h.rainChance > 10 && (
+                        <div className="text-[11px] text-[#6B8F71]">{h.rainChance}%💧</div>
+                      )}
+                    </div>
+                  ))}
+              </div>
+            </div>
+          </section>
+        )}
       </main>
     </div>
   );

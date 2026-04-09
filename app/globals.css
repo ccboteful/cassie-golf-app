@@ -4,26 +4,27 @@
 
 @layer base {
   :root {
-    --background: 37 43% 97%;
-    --foreground: 120 8% 20%;
-    --card: 37 35% 95%;
-    --card-foreground: 120 8% 20%;
-    --popover: 37 35% 95%;
-    --popover-foreground: 120 8% 20%;
-    --primary: 135 12% 38%;
-    --primary-foreground: 38 50% 95%;
-    --secondary: 100 18% 92%;
-    --secondary-foreground: 120 8% 20%;
-    --muted: 100 18% 92%;
-    --muted-foreground: 35 8% 46%;
-    --accent: 100 18% 92%;
-    --accent-foreground: 120 8% 20%;
+    /* Premium editorial palette - deep forest green replaces navy */
+    --background: 42 40% 96%;           /* #F9F6EF */
+    --foreground: 120 8% 18%;           /* #2A302A - warm near-black with green undertone */
+    --card: 40 32% 93%;                 /* #F5F0E7 */
+    --card-foreground: 120 8% 18%;
+    --popover: 42 40% 96%;
+    --popover-foreground: 120 8% 18%;
+    --primary: 136 14% 20%;             /* #2C3A2E - deep forest green */
+    --primary-foreground: 42 50% 97%;   /* #FDFAF4 */
+    --secondary: 130 12% 55%;           /* #3D5449 - brand green */
+    --secondary-foreground: 120 8% 18%;
+    --muted: 130 12% 89%;               /* #E4EBE2 */
+    --muted-foreground: 35 10% 55%;     /* #9A9186 */
+    --accent: 38 48% 47%;               /* #B5903A - antique gold */
+    --accent-foreground: 38 48% 20%;    /* #7A6020 */
     --destructive: 0 72% 52%;
-    --destructive-foreground: 38 50% 95%;
-    --border: 98 11% 85%;
-    --input: 98 11% 85%;
-    --ring: 135 12% 38%;
-    --radius: 1rem;
+    --destructive-foreground: 42 50% 97%;
+    --border: 38 18% 83%;               /* #DDD7CB */
+    --input: 38 18% 83%;
+    --ring: 136 14% 20%;                /* #2C3A2E */
+    --radius: 1.25rem;
   }
 }
 
@@ -47,7 +48,7 @@
   h3,
   .font-display {
     font-family: var(--font-display), "Playfair Display", Georgia, serif;
-    color: #2f352f;
+    color: #2A302A;
   }
 
   h1 {

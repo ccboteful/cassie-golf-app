@@ -29,8 +29,8 @@ export default async function CoursePage({ params }: { params: Promise<{ slug: s
             <ArrowLeft className="h-5 w-5" />
           </Link>
           <div>
-            <p className="text-[13px] uppercase tracking-[0.14em] text-[#7B746C]">{course.city}</p>
-            <h1 className="font-display text-[30px] leading-tight font-semibold text-[#2F352F]">{course.name}</h1>
+            <p className="text-[11px] font-medium uppercase tracking-[0.16em] text-[#9A9186]">{course.city}</p>
+            <h1 className="font-display text-[32px] leading-tight font-bold text-[#2A302A] sm:text-[36px]">{course.name}</h1>
           </div>
         </div>
       </header>
@@ -50,57 +50,58 @@ export default async function CoursePage({ params }: { params: Promise<{ slug: s
           </section>
         ) : null}
 
-        <section className="rounded-[20px] border border-[#D9DDD5] bg-[#F7F3EC] p-4 shadow-[0_4px_14px_rgba(47,53,47,0.05)]">
-          <p className="text-base leading-[1.6] text-[#4B524B]">{course.summary}</p>
+        <section className="rounded-[20px] border border-[#D9DDD5] bg-[#F7F3EC] p-4 shadow-[0_4px_14px_rgba(47,53,47,0.05)] sm:p-5">
+          <p className="text-[12px] font-semibold uppercase tracking-[0.1em] text-[#7B746C]">Course brief</p>
+          <p className="mt-2 text-base leading-[1.7] text-[#52514A]">{course.summary}</p>
 
           <div className="mt-4 grid grid-cols-2 gap-2 text-sm">
-            <div className="rounded-2xl border border-[#D9DDD5] bg-[#FBF8F2] p-3.5">
-              <div className="text-[13px] uppercase tracking-[0.08em] text-[#7B746C]">Par</div>
-              <div className="mt-1 text-[22px] font-semibold leading-none text-[#2F352F]">{course.par}</div>
+            <div className="rounded-2xl border border-[#DDD7CB] bg-[#F5F0E7] p-3.5">
+              <div className="text-[11px] font-medium uppercase tracking-[0.16em] text-[#9A9186]">Par</div>
+              <div className="mt-1 text-[28px] font-bold leading-none text-[#2A302A]">{course.par}</div>
             </div>
-            <div className="rounded-2xl border border-[#D9DDD5] bg-[#FBF8F2] p-3.5">
-              <div className="text-[13px] uppercase tracking-[0.08em] text-[#7B746C]">Rating / slope</div>
-              <div className="mt-1 text-[22px] font-semibold leading-none text-[#2F352F]">
+            <div className="rounded-2xl border border-[#DDD7CB] bg-[#F5F0E7] p-3.5">
+              <div className="text-[11px] font-medium uppercase tracking-[0.16em] text-[#9A9186]">Rating / slope</div>
+              <div className="mt-1 text-[28px] font-bold leading-none text-[#2A302A]">
                 {metricValue(course.rating)} / {metricValue(course.slope)}
               </div>
             </div>
-            <div className="rounded-2xl border border-[#D9DDD5] bg-[#FBF8F2] p-3.5">
-              <div className="text-[13px] uppercase tracking-[0.08em] text-[#7B746C]">Tips yardage</div>
-              <div className="mt-1 text-[22px] font-semibold leading-none text-[#2F352F]">{course.yardage}</div>
+            <div className="rounded-2xl border border-[#DDD7CB] bg-[#F5F0E7] p-3.5">
+              <div className="text-[11px] font-medium uppercase tracking-[0.16em] text-[#9A9186]">Tips yardage</div>
+              <div className="mt-1 text-[28px] font-bold leading-none text-[#2A302A]">{course.yardage}</div>
             </div>
-            <div className="rounded-2xl border border-[#D9DDD5] bg-[#FBF8F2] p-3.5">
-              <div className="text-[13px] uppercase tracking-[0.08em] text-[#7B746C]">Built</div>
-              <div className="mt-1 text-[22px] font-semibold leading-none text-[#2F352F]">
+            <div className="rounded-2xl border border-[#DDD7CB] bg-[#F5F0E7] p-3.5">
+              <div className="text-[11px] font-medium uppercase tracking-[0.16em] text-[#9A9186]">Built</div>
+              <div className="mt-1 text-[28px] font-bold leading-none text-[#2A302A]">
                 {metricValue(course.yearBuilt)}
               </div>
             </div>
           </div>
 
-          <div className="mt-4 grid gap-2 text-base text-[#4B524B] sm:grid-cols-2">
-            <p className="flex items-start gap-2 rounded-xl border border-[#D9DDD5] bg-[#FBF8F2] p-3">
-              <Route className="mt-0.5 h-4 w-4 text-[#556B5D]" />
+          <div className="mt-4 grid gap-2 text-base text-[#52514A] sm:grid-cols-2">
+            <p className="flex items-start gap-2 rounded-xl border border-[#DDD7CB] bg-[#F5F0E7] p-3">
+              <Route className="mt-0.5 h-4 w-4 text-[#3D5449]" />
               {course.signaturePlan}
             </p>
-            <p className="flex items-start gap-2 rounded-xl border border-[#D9DDD5] bg-[#FBF8F2] p-3">
-              <Trophy className="mt-0.5 h-4 w-4 text-[#556B5D]" />
+            <p className="flex items-start gap-2 rounded-xl border border-[#DDD7CB] bg-[#F5F0E7] p-3">
+              <Trophy className="mt-0.5 h-4 w-4 text-[#3D5449]" />
               {course.practice}
             </p>
-            <p className="flex items-start gap-2 rounded-xl border border-[#D9DDD5] bg-[#FBF8F2] p-3">
-              <Clock3 className="mt-0.5 h-4 w-4 text-[#556B5D]" />
+            <p className="flex items-start gap-2 rounded-xl border border-[#DDD7CB] bg-[#F5F0E7] p-3">
+              <Clock3 className="mt-0.5 h-4 w-4 text-[#3D5449]" />
               Pace target: {course.paceTarget}
             </p>
-            <p className="flex items-start gap-2 rounded-xl border border-[#D9DDD5] bg-[#FBF8F2] p-3">
-              <Trees className="mt-0.5 h-4 w-4 text-[#556B5D]" />
+            <p className="flex items-start gap-2 rounded-xl border border-[#DDD7CB] bg-[#F5F0E7] p-3">
+              <Trees className="mt-0.5 h-4 w-4 text-[#3D5449]" />
               Walking profile: {course.walking}
             </p>
           </div>
 
-          <div className="mt-4 rounded-2xl border border-[#D9DDD5] border-l-4 border-l-[#C2A56A] bg-[#F7F3EC] p-4">
-            <h2 className="font-display text-[22px] font-semibold text-[#556B5D]">Local notes</h2>
-            <ul className="mt-2 space-y-2 text-base leading-[1.6] text-[#4B524B]">
+          <div className="mt-4 rounded-2xl border border-[#DDD7CB] border-l-4 border-l-[#B5903A] bg-[#F7EDD4] p-4">
+            <h2 className="font-display text-[22px] font-semibold text-[#7A6020]">Local notes</h2>
+            <ul className="mt-2 space-y-2 text-base leading-[1.6] text-[#52514A]">
               {course.localTips.map((tip) => (
                 <li key={tip} className="flex gap-2">
-                  <span className="mt-[10px] h-1.5 w-1.5 rounded-full bg-[#C2A56A]" />
+                  <span className="mt-[10px] h-1.5 w-1.5 rounded-full bg-[#B5903A]" />
                   <span>{tip}</span>
                 </li>
               ))}
@@ -110,10 +111,10 @@ export default async function CoursePage({ params }: { params: Promise<{ slug: s
 
         <section className="rounded-[20px] border border-[#D9DDD5] bg-[#F7F3EC] p-4 shadow-[0_4px_14px_rgba(47,53,47,0.05)]">
           <div className="mb-3 flex flex-wrap items-center justify-between gap-3">
-            <h2 className="font-display text-[22px] font-semibold text-[#2F352F]">Hole-by-hole playbook</h2>
+            <h2 className="font-display text-[22px] font-bold text-[#2A302A]">Hole-by-hole playbook</h2>
             <Link
               href={`/course/${course.slug}/hole/1`}
-              className="inline-flex items-center gap-1 rounded-2xl bg-[#556B5D] px-4 py-2 text-sm font-semibold text-[#F9F5EC] hover:opacity-95"
+              className="inline-flex items-center gap-1 rounded-2xl bg-[#3D5449] px-4 py-2 text-sm font-semibold text-[#FDFAF4] hover:bg-[#2C3A2E]"
             >
               Start on 1 <ArrowRight className="h-4 w-4" />
             </Link>
@@ -124,7 +125,7 @@ export default async function CoursePage({ params }: { params: Promise<{ slug: s
               <Link
                 key={hole.number}
                 href={`/course/${course.slug}/hole/${hole.number}`}
-                className="flex min-h-10 items-center justify-center rounded-full border border-[#D9DDD5] bg-[#E8EEE7] px-3 text-sm font-semibold text-[#2F352F] transition hover:bg-[#dce6db]"
+                className="flex min-h-10 items-center justify-center rounded-full border border-[#DDD7CB] bg-[#E4EBE2] px-3 text-sm font-semibold text-[#2A302A] transition hover:bg-[#8FA693]"
               >
                 {hole.number}
               </Link>
@@ -132,18 +133,18 @@ export default async function CoursePage({ params }: { params: Promise<{ slug: s
           </div>
         </section>
 
-        <section className="rounded-[20px] border border-[#D9DDD5] bg-[#F7F3EC] p-4 shadow-[0_4px_14px_rgba(47,53,47,0.05)]">
-          <h2 className="font-display text-[22px] font-semibold text-[#2F352F]">Address</h2>
-          <p className="mt-1 text-base text-[#4B524B]">{course.address}</p>
-          <div className="mt-3 flex flex-wrap items-center gap-4 text-[13px] text-[#4B524B]">
+        <section className="rounded-[20px] border border-[#DDD7CB] bg-[#F5F0E7] p-4 shadow-[0_4px_14px_rgba(47,53,47,0.05)]">
+          <h2 className="font-display text-[22px] font-bold text-[#2A302A]">Address</h2>
+          <p className="mt-1 text-base text-[#52514A]">{course.address}</p>
+          <div className="mt-3 flex flex-wrap items-center gap-4 text-[13px] text-[#52514A]">
             <span className="inline-flex items-center gap-1">
-              <CircleGauge className="h-3.5 w-3.5 text-[#556B5D]" /> Designer: {course.designer}
+              <CircleGauge className="h-3.5 w-3.5 text-[#3D5449]" /> Designer: {course.designer}
             </span>
             <span className="inline-flex items-center gap-1">
-              <Waves className="h-3.5 w-3.5 text-[#556B5D]" /> Region: {course.region}
+              <Waves className="h-3.5 w-3.5 text-[#3D5449]" /> Region: {course.region}
             </span>
             <span className="inline-flex items-center gap-1">
-              <Flag className="h-3.5 w-3.5 text-[#556B5D]" /> {course.holes.length} holes
+              <Flag className="h-3.5 w-3.5 text-[#3D5449]" /> {course.holes.length} holes
             </span>
           </div>
         </section>
