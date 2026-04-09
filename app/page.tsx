@@ -1,12 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Flag, Sparkles, Wind, Sun, CloudRain, Thermometer } from "lucide-react";
+import { ArrowRight, Flag, Sparkles, Wind } from "lucide-react";
 import { getAllCourses } from "@/lib/courses";
-import { getGolfWeather } from "@/lib/weather";
+import GolfWeather from "@/components/GolfWeather";
 
 export default async function HomePage() {
   const courses = await getAllCourses();
-  const weather = await getGolfWeather();
 
   const northPreview = courses.find((course) => course.region === "north");
   const southPreview = courses.find((course) => course.region === "south");
@@ -134,59 +133,7 @@ export default async function HomePage() {
           </span>
         </section>
 
-        {weather && (
-          <section className="mt-7 rounded-[20px] border border-[#D9DDD5] bg-[#F7F3EC] p-5 shadow-[0_4px_14px_rgba(47,53,47,0.05)]">
-            <div className="flex items-center justify-between">
-              <h2 className="font-display text-[24px] font-semibold text-[#2A302A]">
-                {weather.current.emoji} Today&rsquo;s Golf Weather
-              </h2>
-              <span className="text-[13px] text-[#52514A]">{weather.date}</span>
-            </div>
-
-            <div className="mt-4 grid gap-3 sm:grid-cols-4">
-              <div className="rounded-2xl border border-[#D6DACE] bg-[#FBF8F2] px-4 py-3 text-center">
-                <div className="text-[28px] font-bold text-[#2A302A]">{weather.current.temp}°F</div>
-                <div className="text-[13px] text-[#52514A]">Feels {weather.current.feelsLike}°F</div>
-              </div>
-              <div className="rounded-2xl border border-[#D6DACE] bg-[#FBF8F2] px-4 py-3 text-center">
-                <div className="text-[16px] font-semibold text-[#2A302A]">{weather.current.condition}</div>
-                <div className="text-[13px] text-[#52514A]">H: {weather.high}° / L: {weather.low}°</div>
-              </div>
-              <div className="rounded-2xl border border-[#D6DACE] bg-[#FBF8F2] px-4 py-3 text-center">
-                <div className="text-[16px] font-semibold text-[#2A302A]">{weather.current.wind} mph</div>
-                <div className="text-[13px] text-[#52514A]">Wind</div>
-              </div>
-              <div className="rounded-2xl border border-[#D6DACE] bg-[#FBF8F2] px-4 py-3 text-center">
-                <div className="text-[13px] text-[#52514A]">☀️ {weather.sunrise}</div>
-                <div className="text-[13px] text-[#52514A]">🌅 {weather.sunset}</div>
-              </div>
-            </div>
-
-            <div className="mt-4">
-              <h3 className="mb-2 text-[14px] font-semibold text-[#2A302A]">Tee Time Forecast</h3>
-              <div className="grid grid-cols-4 gap-1.5 sm:grid-cols-7">
-                {weather.golfHours
-                  .filter((h) => h.hour >= 7 && h.hour <= 18)
-                  .map((h) => (
-                    <div
-                      key={h.hour}
-                      className="rounded-xl border border-[#D6DACE] bg-[#FBF8F2] px-2 py-2 text-center"
-                    >
-                      <div className="text-[12px] font-medium text-[#52514A]">
-                        {h.hour > 12 ? h.hour - 12 + "p" : h.hour + "a"}
-                      </div>
-                      <div className="text-[14px]">{h.emoji}</div>
-                      <div className="text-[14px] font-semibold text-[#2A302A]">{h.temp}°</div>
-                      <div className="text-[11px] text-[#52514A]">{h.wind}mph</div>
-                      {h.rainChance > 10 && (
-                        <div className="text-[11px] text-[#6B8F71]">{h.rainChance}%💧</div>
-                      )}
-                    </div>
-                  ))}
-              </div>
-            </div>
-          </section>
-        )}
+        <GolfWeather />
       </main>
     </div>
   );
