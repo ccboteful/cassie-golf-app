@@ -70,9 +70,14 @@ export default async function HomePage() {
               <span className="inline-flex items-center rounded-full border border-[#D6DACE] bg-[rgba(251,248,242,0.92)] px-3.5 py-1.5 text-[13px] font-medium text-[#2A302A]">
                 {courses.length * 18} hole briefs
               </span>
-              <span className="inline-flex items-center rounded-full border border-[#D6DACE] bg-[rgba(251,248,242,0.92)] px-3.5 py-1.5 text-[13px] font-medium text-[#2A302A]">
-                Mobile-first UI
-              </span>
+              <a
+                href="https://www.canva.com/design/DAG6803RGuY/dNDEOaeaRv6ShbXqqAOeUg/view?utm_content=DAG6803RGuY&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=ha3cdb7851f"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center rounded-full border border-[#D6DACE] bg-[rgba(251,248,242,0.92)] px-3.5 py-1.5 text-[13px] font-medium text-[#2A302A] transition hover:-translate-y-0.5 hover:bg-white"
+              >
+                2026 Ladies Golf Handbook
+              </a>
             </div>
           </div>
         </section>
